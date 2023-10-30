@@ -7,6 +7,7 @@ var health = 100
 var player_in_Zone = false
 var Iframes = false
 
+@warning_ignore("unused_parameter")
 func _physics_process(delta):
 	deal_damge()
 	
@@ -27,6 +28,7 @@ func _on_detection_area_body_entered(body):
 	player_follow = true
 
 
+@warning_ignore("unused_parameter")
 func _on_detection_area_body_exited(body):
 	player = null
 	player_follow = false

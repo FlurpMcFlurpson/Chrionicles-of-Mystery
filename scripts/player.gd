@@ -12,6 +12,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
 	attack()
+	current_cam()
 	
 	if health <= 0:
 		alive = false
@@ -118,11 +119,16 @@ func attack():
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("attack_up")
 			$player_clooldown.start()
-
-
-
-
+			
 func _on_player_clooldown_timeout():
 	$player_clooldown.stop()
 	global.player_attacking = false
 	attacking = false
+	
+func  current_cam():
+	if global.current_scene =="world":
+		$world_cam.enabled = true
+		$coast_cam.enabled = false
+	elif global.current_scene =="coast":
+		$world_cam.enabled = false
+		$coast_cam.enabled = true
