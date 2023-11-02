@@ -9,7 +9,7 @@ var Iframes = false
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
-	deal_damge()
+	change_scene()
 	
 	if player_follow:
 		position += (player.position - position)/speed
@@ -41,22 +41,17 @@ func enemy():
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("player"):
 		player_in_Zone = true
+		global.transition_scene = true
 
 
 func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_in_Zone = false
+		global.transition_scene = false
 
-func  deal_damge():
-	if player_in_Zone and global.player_attacking == true:
-		if Iframes == false:
-			health = health - 20
-			$damage_cooldown.start()
-			Iframes = true
-			print("Slime health = ", health )
-		if health <= 0:
-			self.queue_free()
-
-
-func _on_damage_cooldown_timeout():
-	Iframes = false
+func change_scene():
+	if global.transition_scene == true and player_in_Zone ==true:
+		get_tree().change_scene_to_file("res://scenes/combat.tscn")
+		global.game_init_load = false
+		global.scene_changed()
+		

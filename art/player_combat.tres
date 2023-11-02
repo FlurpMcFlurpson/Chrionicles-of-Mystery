@@ -1,0 +1,24 @@
+[gd_resource type="AnimatedTexture" load_steps=7 format=3 uid="uid://ccsururxv3j4w"]
+
+[ext_resource type="Texture2D" uid="uid://cci7t87uynbmw" path="res://art/characters/player/sprite_06.png" id="1_m2gi5"]
+[ext_resource type="Texture2D" uid="uid://bgpti6pw76wjg" path="res://art/characters/player/sprite_07.png" id="2_50qry"]
+[ext_resource type="Texture2D" uid="uid://bxask4xf15gwm" path="res://art/characters/player/sprite_08.png" id="3_coexd"]
+[ext_resource type="Texture2D" uid="uid://drmtutntef6cg" path="res://art/characters/player/sprite_09.png" id="4_l00ep"]
+[ext_resource type="Texture2D" uid="uid://be8t6dekpjt2l" path="res://art/characters/player/sprite_10.png" id="5_rhr07"]
+[ext_resource type="Texture2D" uid="uid://dp377j13qaj8u" path="res://art/characters/player/sprite_11.png" id="6_hsa3g"]
+
+[resource]
+frames = 6
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_m2gi5")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("2_50qry")
+frame_1/duration = 0.5
+frame_2/texture = ExtResource("3_coexd")
+frame_2/duration = 0.5
+frame_3/texture = ExtResource("4_l00ep")
+frame_3/duration = 0.5
+frame_4/texture = ExtResource("5_rhr07")
+frame_4/duration = 0.5
+frame_5/texture = ExtResource("6_hsa3g")
+frame_5/duration = 0.5

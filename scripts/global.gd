@@ -5,10 +5,11 @@ var player_attacking = false
 var current_scene = "world"
 var transition_scene = false
 
-var player_exit_cliffside_posx = 0
-var player_exit_cliffside_posy = 0
-var player_start_posx = 0
-var player_start_posy = 0
+var player_exits_coast = Vector2(270,380)
+var player_init_pos = Vector2(29, 100)
+
+var game_init_load = true
+
 
 func scene_changed():
 	transition_scene = false

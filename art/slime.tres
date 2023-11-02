@@ -1,0 +1,18 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://ckky6lam0wcnw"]
+
+[ext_resource type="Texture2D" uid="uid://dimdywpxrxve4" path="res://art/characters/slime/sprite_00.png" id="1_vrwx3"]
+[ext_resource type="Texture2D" uid="uid://bdy4als6xnsjw" path="res://art/characters/slime/sprite_01.png" id="2_0jw52"]
+[ext_resource type="Texture2D" uid="uid://ulutaytd4i7o" path="res://art/characters/slime/sprite_02.png" id="3_bi5fc"]
+[ext_resource type="Texture2D" uid="uid://dsxqf0kheijjl" path="res://art/characters/slime/sprite_03.png" id="4_423kl"]
+
+[resource]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_vrwx3")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("2_0jw52")
+frame_1/duration = 0.5
+frame_2/texture = ExtResource("3_bi5fc")
+frame_2/duration = 0.5
+frame_3/texture = ExtResource("4_423kl")
+frame_3/duration = 0.5
