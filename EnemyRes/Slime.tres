@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cawcssv2ptlv3"]
+
+[ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_ws5lo"]
+[ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="2_d3wb1"]
+
+[resource]
+script = ExtResource("1_ws5lo")
+name = " A slime"
+texture = ExtResource("2_d3wb1")
+health = 30
+damage = 20

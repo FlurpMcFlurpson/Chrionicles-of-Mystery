@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdlspnorq5pu4"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_gy58a"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_w5p87"]
 [ext_resource type="TileSet" uid="uid://bs62rnvtx8u1b" path="res://art/world_set.tres" id="2_4hmw5"]
 [ext_resource type="PackedScene" uid="uid://bdvsth3178m5q" path="res://scenes/player.tscn" id="4_ttps7"]
 [ext_resource type="PackedScene" uid="uid://cl3emxh5terbm" path="res://scenes/enemy.tscn" id="5_ksuqs"]
@@ -13,7 +13,7 @@ size = Vector2(2.69944, 363.351)
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_gy58a")
+script = ExtResource("1_w5p87")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -67,3 +67,4 @@ shape = SubResource("RectangleShape2D_hlgyd")
 [connection signal="body_entered" from="Coast_portal" to="." method="_on_coast_portal_body_entered"]
 [connection signal="body_exited" from="Coast_portal" to="." method="_on_coast_portal_body_exited"]
 [connection signal="body_entered" from="Forest_Protal" to="." method="_on_forest_protal_body_entered"]
+[connection signal="body_exited" from="Forest_Protal" to="." method="_on_forest_protal_body_exited"]

@@ -9,7 +9,6 @@ var Iframes = false
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
-	change_scene()
 	
 	if player_follow:
 		position += (player.position - position)/speed
@@ -42,6 +41,7 @@ func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("player"):
 		player_in_Zone = true
 		global.transition_scene = true
+		global.scene_entered = "combat"
 
 
 func _on_enemy_hitbox_body_exited(body):
@@ -49,9 +49,5 @@ func _on_enemy_hitbox_body_exited(body):
 		player_in_Zone = false
 		global.transition_scene = false
 
-func change_scene():
-	if global.transition_scene == true and player_in_Zone ==true:
-		get_tree().change_scene_to_file("res://scenes/combat.tscn")
-		global.game_init_load = false
-		global.scene_changed()
+
 		

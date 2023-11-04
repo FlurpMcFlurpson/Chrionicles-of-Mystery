@@ -10,8 +10,6 @@ var attacking = false
 
 func _physics_process(delta):
 	player_movement(delta)
-	enemy_attack()
-	attack()
 	current_cam()
 	
 	if health <= 0:
@@ -85,41 +83,11 @@ func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_Inragne = false
 
-func enemy_attack():
-	if enemy_Inragne and enemy_cooldown == true:
-		health = health - 20
-		enemy_cooldown = false
-		$Attack_cooldown.start()
-		print(health)
 
 
 func _on_attack_cooldown_timeout():
 	enemy_cooldown = true
 
-
-func attack():
-	var dir = current_dir
-	
-	if Input.is_action_just_pressed("attack"):
-		global.player_attacking = true
-		attacking = true
-		if dir == "right":
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play("attack_side")
-			$player_clooldown.start()
-		if dir == "left":
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("attack_side")
-			$player_clooldown.start()
-		if dir == "down":
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("attack_down")
-			$player_clooldown.start()
-		if dir == "up":
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("attack_up")
-			$player_clooldown.start()
-			
 func _on_player_clooldown_timeout():
 	$player_clooldown.stop()
 	global.player_attacking = false
@@ -127,8 +95,10 @@ func _on_player_clooldown_timeout():
 	
 func  current_cam():
 	if global.current_scene =="world":
+		#print("worldcam on")
 		$world_cam.enabled = true
 		$coast_cam.enabled = false
 	elif global.current_scene =="coast":
+		#print("coastcam on")
 		$world_cam.enabled = false
 		$coast_cam.enabled = true

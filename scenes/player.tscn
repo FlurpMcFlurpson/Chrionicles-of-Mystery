@@ -426,18 +426,6 @@ position = Vector2(3, 2)
 collision_layer = 3
 script = ExtResource("1_bp8c4")
 
-[node name="coast_cam" type="Camera2D" parent="."]
-offset = Vector2(1, 0)
-zoom = Vector2(5, 5)
-limit_left = 0
-limit_top = 0
-limit_right = 352
-limit_bottom = 208
-limit_smoothed = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 6)
 scale = Vector2(0.979167, 1)
@@ -461,15 +449,21 @@ wait_time = 0.5
 wait_time = 0.5
 
 [node name="world_cam" type="Camera2D" parent="."]
-visible = false
 zoom = Vector2(5, 5)
-limit_left = 1
+limit_left = 0
 limit_top = 0
 limit_right = 497
 limit_bottom = 398
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="coast_cam" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+limit_left = -64
+limit_top = 1
+limit_right = 351
+limit_bottom = 207
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkcvkf2jqgidv"]
+
+[ext_resource type="Script" path="res://scripts/scenemanger.gd" id="1_3vinj"]
+[ext_resource type="PackedScene" uid="uid://bdlspnorq5pu4" path="res://scenes/world.tscn" id="2_v5vyh"]
+[ext_resource type="PackedScene" uid="uid://bvfbf37a12asl" path="res://scenes/coast.tscn" id="3_nqgo0"]
+[ext_resource type="PackedScene" uid="uid://cjd2gwr12xu68" path="res://scenes/combat.tscn" id="4_aa51r"]
+
+[sub_resource type="Animation" id="Animation_0dxqc"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2i4cq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_it6mb"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_it1kf"]
+_data = {
+"RESET": SubResource("Animation_2i4cq"),
+"fade_in": SubResource("Animation_0dxqc"),
+"fade_out": SubResource("Animation_it6mb")
+}
+
+[node name="SceneManger" type="Node"]
+script = ExtResource("1_3vinj")
+
+[node name="world" parent="." instance=ExtResource("2_v5vyh")]
+
+[node name="Coast" parent="." instance=ExtResource("3_nqgo0")]
+
+[node name="Combat" parent="." instance=ExtResource("4_aa51r")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_it1kf")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
