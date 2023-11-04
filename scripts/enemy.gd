@@ -3,9 +3,7 @@ extends CharacterBody2D
 var speed = 40
 var player_follow = false
 var player = null
-var health = 100
 var player_in_Zone = false
-var Iframes = false
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
