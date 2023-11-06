@@ -13,6 +13,8 @@ func _ready():
 	set_health($PlayerContainer/ProgressBar, PlayerState.current_health, PlayerState.max_health)
 	$EnemyContainer/Enemy.texture = enemy.texture
 	$Textbox/Label.hide()
+	$"Panel/Skills menu".hide()
+	$BattleMusic.play()
 	display_text("A wild %s apppers!" % enemy.name)
 	
 	current_enemy_health = enemy.health
@@ -48,7 +50,7 @@ func _on_run_pressed():
 func enemy_turn():
 	display_text("%s attacks you with full force" % enemy.name)
 	await(textbox_closed)
-	
+	$DamageSound.play()
 	current_player_health = max(0 , current_player_health - enemy.damage)
 	set_health($PlayerContainer/ProgressBar, current_player_health, PlayerState.max_health)
 	$AnimationPlayer.play("player_damaged")
@@ -62,6 +64,7 @@ func _on_attack_pressed():
 	await($AnimationPlayer)
 	display_text("You swing your sword at %s" % enemy.name)
 	await(textbox_closed)
+	$DamageSound.play()
 	current_enemy_health = max(0 , current_enemy_health - PlayerState.base_damage)
 	set_health($EnemyContainer/ProgressBar, current_enemy_health, enemy.health)
 	$AnimationPlayer.play("ememy_damaged")
@@ -70,18 +73,21 @@ func _on_attack_pressed():
 	await(textbox_closed)
 	
 	if current_enemy_health == 0:
-		display_text("%s has been defeated" % enemy.name)
-		await(textbox_closed)
 		$AnimationPlayer.play("enemy_death")
 		await($AnimationPlayer)
+		display_text("%s has been defeated" % enemy.name)
+		await(textbox_closed)
 		await get_tree().create_timer(0.25).timeout
+		PlayerState.current_health = current_player_health
 		global.transition_scene = true
 		global.scene_entered = global.last_scene_used
 		emit_signal("world_changed", world_name)
 		global.transition_scene = false
 		
-		
 	enemy_turn()
-	
-	
 
+func _on_skills_toggled(button_pressed):
+	if button_pressed == true:
+		$"Panel/Skills menu".show()
+	else:
+		$"Panel/Skills menu".hide()

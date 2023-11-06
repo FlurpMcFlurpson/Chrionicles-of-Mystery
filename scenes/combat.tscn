@@ -1,8 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://cjd2gwr12xu68"]
+[gd_scene load_steps=32 format=3 uid="uid://cjd2gwr12xu68"]
 
 [ext_resource type="Script" path="res://scripts/combat.gd" id="1_cgxm6"]
 [ext_resource type="Texture2D" uid="uid://bx08cxphtmw8m" path="res://art/battleback10.png" id="1_oola5"]
-[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://EnemyRes/Slime.tres" id="2_qp1c0"]
+[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://enemyRes/Slime.tres" id="2_qp1c0"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="2_vmu0p"]
 [ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="3_cv08u"]
 [ext_resource type="Texture2D" uid="uid://ccsururxv3j4w" path="res://art/player_combat.tres" id="4_j4qie"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://deafttatljs05" path="res://art/characters/player/sprite_41.png" id="17_bw7qs"]
 [ext_resource type="Texture2D" uid="uid://dnllgwdq0388a" path="res://art/characters/player/sprite_42.png" id="18_5bjkd"]
 [ext_resource type="Texture2D" uid="uid://c0dhl3lo8ahb" path="res://art/characters/player/sprite_43.png" id="19_qkxwq"]
+[ext_resource type="AudioStream" uid="uid://djmkb82enflgo" path="res://audio/hitHurt.wav" id="20_psw73"]
+[ext_resource type="AudioStream" uid="uid://q4pl4gi37r" path="res://audio/battle-intro-126837.mp3" id="21_cnwqr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5eus"]
 bg_color = Color(0.619608, 0.0784314, 0.101961, 1)
@@ -319,6 +321,7 @@ theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 
 theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
 theme_override_fonts/font = ExtResource("2_vmu0p")
 theme_override_font_sizes/font_size = 50
+toggle_mode = true
 text = "Skills
 "
 
@@ -342,6 +345,66 @@ theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
 theme_override_fonts/font = ExtResource("2_vmu0p")
 theme_override_font_sizes/font_size = 50
 text = "Run
+"
+
+[node name="Skills menu" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.0246306
+anchor_right = 0.645
+anchor_bottom = 0.995076
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Skill" type="Button" parent="Panel/Skills menu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("2_vmu0p")
+theme_override_font_sizes/font_size = 36
+text = "Forever Sleep"
+
+[node name="Skill2" type="Button" parent="Panel/Skills menu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("2_vmu0p")
+theme_override_font_sizes/font_size = 36
+text = "Void Step"
+
+[node name="Skill3" type="Button" parent="Panel/Skills menu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("2_vmu0p")
+theme_override_font_sizes/font_size = 36
+text = "Rock smash"
+
+[node name="Skill4" type="Button" parent="Panel/Skills menu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("2_vmu0p")
+theme_override_font_sizes/font_size = 36
+text = "Water gun
 "
 
 [node name="Textbox" type="Panel" parent="."]
@@ -379,5 +442,14 @@ libraries = {
 "": SubResource("AnimationLibrary_4x4in")
 }
 
+[node name="DamageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_psw73")
+volume_db = -18.0
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_cnwqr")
+volume_db = -19.665
+
 [connection signal="pressed" from="Panel/ActionMenu/Attack" to="." method="_on_attack_pressed"]
+[connection signal="toggled" from="Panel/ActionMenu/Skills" to="." method="_on_skills_toggled"]
 [connection signal="pressed" from="Panel/ActionMenu/Run" to="." method="_on_run_pressed"]

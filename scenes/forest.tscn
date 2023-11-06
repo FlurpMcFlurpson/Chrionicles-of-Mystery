@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcavvc0grmrtr"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_50o5u"]
+
+[node name="forest" type="Node2D"]
+script = ExtResource("1_50o5u")
+world_name = "forest"

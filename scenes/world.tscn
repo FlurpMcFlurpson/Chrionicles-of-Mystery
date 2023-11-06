@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_w5p87"]
 [ext_resource type="TileSet" uid="uid://bs62rnvtx8u1b" path="res://art/world_set.tres" id="2_4hmw5"]
+[ext_resource type="PackedScene" uid="uid://b8bmelb07sb41" path="res://scenes/enemy_spwan.tscn" id="4_t0k37"]
 [ext_resource type="PackedScene" uid="uid://bdvsth3178m5q" path="res://scenes/player.tscn" id="4_ttps7"]
-[ext_resource type="PackedScene" uid="uid://cl3emxh5terbm" path="res://scenes/enemy.tscn" id="5_ksuqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obohr"]
 size = Vector2(10.2464, 94.8312)
@@ -38,10 +38,7 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(327687, 655363, 7, 524309, 655363, 7, 393244, 655363, 7, 327693, 3, 5, 851973, 3, 5, 655368, 393219, 7, 720905, 393219, 7, 786442, 393219, 7, 786443, 393219, 7, 458762, 393219, 7, 458763, 393219, 7, 589836, 393219, 7, 524300, 393219, 7, 327681, 393219, 7, 196609, 393219, 7, 589825, 393219, 7, 655361, 393219, 7, 851992, 3, 5, 1179659, 3, 1, 917516, 3, 1, 917533, 3, 1, 1114138, 3, 1, 983061, 3, 1, 1310741, 3, 1, 1245212, 3, 1, 589839, 3, 1, 196624, 3, 1, 262162, 3, 1, 458769, 655363, 7, 1179662, 655363, 7, 1048586, 655363, 7, 1179672, 655363, 7, 1114141, 655363, 7, 1310746, 655363, 7, 1703937, 65538, 3, 1703938, 131074, 3, 1703939, 131074, 3, 1703940, 131074, 3, 1703941, 131074, 3, 1703942, 131074, 3, 1703943, 131074, 3, 1703944, 131074, 3, 1703945, 131074, 3, 1703946, 131074, 3, 1703947, 131074, 3, 1703948, 131074, 3, 1703949, 131074, 3, 1703950, 131074, 3, 1703951, 131074, 3, 1703952, 196610, 3, 1703955, 65538, 3, 1703956, 131074, 3, 1703957, 131074, 3, 1703958, 131074, 3, 1703959, 131074, 3, 1703960, 131074, 3, 1703961, 131074, 3, 1703962, 131074, 3, 1703963, 131074, 3, 1703964, 131074, 3, 1703965, 131074, 3, 1703966, 131074, 3, 1703967, 196610, 3)
 
 [node name="player" parent="." instance=ExtResource("4_ttps7")]
-position = Vector2(270, 380)
-
-[node name="Enemy" parent="." instance=ExtResource("5_ksuqs")]
-position = Vector2(392, 116)
+position = Vector2(123, 107)
 
 [node name="Border" type="StaticBody2D" parent="."]
 
@@ -63,6 +60,8 @@ scale = Vector2(10.3725, 0.121095)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Forest_Protal"]
 position = Vector2(0, 66.0638)
 shape = SubResource("RectangleShape2D_hlgyd")
+
+[node name="EnemySpwan" parent="." instance=ExtResource("4_t0k37")]
 
 [connection signal="body_entered" from="Coast_portal" to="." method="_on_coast_portal_body_entered"]
 [connection signal="body_exited" from="Coast_portal" to="." method="_on_coast_portal_body_exited"]
