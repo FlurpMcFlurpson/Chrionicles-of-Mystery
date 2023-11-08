@@ -14,6 +14,7 @@ size = Vector2(2.69944, 363.351)
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_w5p87")
+world_name = "world"
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

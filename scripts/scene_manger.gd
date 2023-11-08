@@ -12,14 +12,9 @@ func _ready() -> void:
 	current_world.connect("world_changed",self.handle_world_chagned)
 
 func handle_world_chagned(current_world_name:String):
-	match current_world_name:
-		"world":
-			next_world_name = global.scene_entered
-		"coast":
-			next_world_name = global.scene_entered
-		_:
-			return
+	next_world_name = global.scene_entered
 	next_world = load("res://scenes/"+next_world_name+".tscn").instantiate()
+	print("testing")
 	next_world.z_index = -1
 	add_child(next_world)
 	anim.play("fade_in")

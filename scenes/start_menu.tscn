@@ -1,0 +1,224 @@
+[gd_scene load_steps=18 format=3 uid="uid://bhj5obaplsqiq"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_8v75u"]
+[ext_resource type="Texture2D" uid="uid://bmixdqn710dri" path="res://art/Parallax_Backgrounds_Plains/0.png" id="1_i5ijw"]
+[ext_resource type="Texture2D" uid="uid://cci7t87uynbmw" path="res://art/characters/player/sprite_06.png" id="2_hqnjj"]
+[ext_resource type="Texture2D" uid="uid://dk34a3wjfr2mb" path="res://art/Parallax_Backgrounds_Plains/1.png" id="3_5fru0"]
+[ext_resource type="Texture2D" uid="uid://7a2c25lq2vl6" path="res://art/characters/player/sprite_24.png" id="4_l6nwq"]
+[ext_resource type="Texture2D" uid="uid://bgh0nw3x2uups" path="res://art/characters/player/sprite_25.png" id="5_wb3md"]
+[ext_resource type="Texture2D" uid="uid://bdmw6vnnofs01" path="res://art/characters/player/sprite_26.png" id="6_hc1vu"]
+[ext_resource type="Texture2D" uid="uid://n8ah2re113hh" path="res://art/characters/player/sprite_27.png" id="7_x5bhc"]
+[ext_resource type="Texture2D" uid="uid://bvfmedwfna4e1" path="res://art/characters/player/sprite_28.png" id="8_0cw65"]
+[ext_resource type="Texture2D" uid="uid://bqxgnoatovn3t" path="res://art/characters/player/sprite_29.png" id="9_p2na2"]
+[ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="11_uqhnv"]
+[ext_resource type="FontFile" uid="uid://cpuxi3wou6e2u" path="res://art/fonts/Lumos-JRBj.ttf" id="12_uthl4"]
+
+[sub_resource type="Animation" id="Animation_d8gvp"]
+resource_name = "player_runing"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9, 10, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 11, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2"), ExtResource("4_l6nwq"), ExtResource("5_wb3md"), ExtResource("6_hc1vu"), ExtResource("7_x5bhc"), ExtResource("8_0cw65"), ExtResource("9_p2na2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-85, 507), Vector2(1123, 507)]
+}
+
+[sub_resource type="Animation" id="Animation_cofjs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_hqnjj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-126, 532)]
+}
+
+[sub_resource type="Animation" id="Animation_p36lv"]
+resource_name = "testing"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkc0r"]
+_data = {
+"RESET": SubResource("Animation_cofjs"),
+"player_runing": SubResource("Animation_d8gvp"),
+"testing": SubResource("Animation_p36lv")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08t86"]
+bg_color = Color(0, 0, 0, 0.415686)
+
+[node name="Start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8v75u")
+metadata/_edit_use_anchors_ = true
+
+[node name="Backgourd" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i5ijw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.841
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -12.968
+offset_right = 41.832
+offset_bottom = -25.968
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hqnjj")
+expand_mode = 2
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Forgournd" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00260417
+anchor_top = -0.00154321
+anchor_right = 0.997396
+anchor_bottom = 0.998457
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5fru0")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jkc0r")
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428323
+anchor_top = 0.537634
+anchor_right = 0.576021
+anchor_bottom = 0.757296
+offset_top = -3.05176e-05
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Start_button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("11_uqhnv")
+theme_override_font_sizes/font_size = 36
+text = "New Game"
+
+[node name="Setting_button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("11_uqhnv")
+theme_override_font_sizes/font_size = 36
+text = "Settings"
+
+[node name="Quit_button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("11_uqhnv")
+theme_override_font_sizes/font_size = 36
+text = "Quit"
+
+[node name="Title" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178819
+anchor_top = 0.112654
+anchor_right = 0.828993
+anchor_bottom = 0.530864
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_08t86")
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.0
+offset_top = -111.0
+offset_right = 287.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.564706, 0.584314, 0.207843, 1)
+theme_override_colors/font_shadow_color = Color(0.937255, 0.968627, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_uthl4")
+theme_override_font_sizes/font_size = 73
+text = "The Choronicles
+ Of Mystery"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Setting_button" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit_button" to="." method="_on_quit_button_pressed"]

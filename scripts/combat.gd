@@ -1,6 +1,6 @@
 extends Control
 signal world_changed(world_name)
-@export var world_name = "world"
+@export var world_name = ""
 signal textbox_closed
 @export var enemy: Resource
 
@@ -43,6 +43,7 @@ func _on_run_pressed():
 	global.scene_entered = global.last_scene_used
 	emit_signal("world_changed", world_name)
 	global.transition_scene = false
+	global.just_in_combat = false
 
 	
 
@@ -83,6 +84,7 @@ func _on_attack_pressed():
 		global.scene_entered = global.last_scene_used
 		emit_signal("world_changed", world_name)
 		global.transition_scene = false
+		global.just_in_combat = false
 		
 	enemy_turn()
 
