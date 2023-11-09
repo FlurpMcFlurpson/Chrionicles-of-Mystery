@@ -4,3 +4,4 @@ extends Resource
 @export var texture :AnimatedTexture
 @export var health = 30
 @export var damage = 20
+@export var speed = 30

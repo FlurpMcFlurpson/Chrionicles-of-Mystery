@@ -20,6 +20,10 @@ config/icon="res://art/icon.svg"
 global="*res://scripts/global.gd"
 PlayerState="*res://scripts/player_state.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 ui_accept={

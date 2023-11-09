@@ -3,6 +3,7 @@ signal world_changed(world_name)
 @export var world_name = ""
 signal textbox_closed
 @export var enemy: Resource
+@export var heal : Resource
 
 var current_player_health = 0
 var current_enemy_health = 0
@@ -60,7 +61,7 @@ func enemy_turn():
 	await(textbox_closed)
 	
 	
-func _on_attack_pressed():
+func player_turn():
 	$AnimationPlayer.play("player_attack")
 	await($AnimationPlayer)
 	display_text("You swing your sword at %s" % enemy.name)
@@ -72,7 +73,24 @@ func _on_attack_pressed():
 	await($AnimationPlayer)
 	display_text("You dealt %d damage!" % PlayerState.base_damage)
 	await(textbox_closed)
-	
+
+
+func _on_attack_pressed():
+	if PlayerState.base_speed >= enemy.speed:
+		await  player_turn()
+		enemy_turn()
+	else:
+		await enemy_turn()
+		player_turn()
+	if current_player_health == 0:
+		$AnimationPlayer.play("player_death")
+		await($AnimationPlayer)
+		display_text("%s has been defeated" % PlayerState.player_name)
+		await(textbox_closed)
+		display_text("%s, better luck in your next life!" % PlayerState.name)
+		await(textbox_closed)
+		await get_tree().create_timer(0.25).timeout
+		get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
 	if current_enemy_health == 0:
 		$AnimationPlayer.play("enemy_death")
 		await($AnimationPlayer)
@@ -85,11 +103,12 @@ func _on_attack_pressed():
 		emit_signal("world_changed", world_name)
 		global.transition_scene = false
 		global.just_in_combat = false
-		
-	enemy_turn()
-
+	#enemy_turn()
+	print("testing")
 func _on_skills_toggled(button_pressed):
 	if button_pressed == true:
 		$"Panel/Skills menu".show()
 	else:
 		$"Panel/Skills menu".hide()
+
+

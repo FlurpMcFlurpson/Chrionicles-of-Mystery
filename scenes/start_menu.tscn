@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhj5obaplsqiq"]
+[gd_scene load_steps=17 format=3 uid="uid://bhj5obaplsqiq"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_8v75u"]
 [ext_resource type="Texture2D" uid="uid://bmixdqn710dri" path="res://art/Parallax_Backgrounds_Plains/0.png" id="1_i5ijw"]
-[ext_resource type="Texture2D" uid="uid://cci7t87uynbmw" path="res://art/characters/player/sprite_06.png" id="2_hqnjj"]
 [ext_resource type="Texture2D" uid="uid://dk34a3wjfr2mb" path="res://art/Parallax_Backgrounds_Plains/1.png" id="3_5fru0"]
 [ext_resource type="Texture2D" uid="uid://7a2c25lq2vl6" path="res://art/characters/player/sprite_24.png" id="4_l6nwq"]
 [ext_resource type="Texture2D" uid="uid://bgh0nw3x2uups" path="res://art/characters/player/sprite_25.png" id="5_wb3md"]
@@ -12,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bqxgnoatovn3t" path="res://art/characters/player/sprite_29.png" id="9_p2na2"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="11_uqhnv"]
 [ext_resource type="FontFile" uid="uid://cpuxi3wou6e2u" path="res://art/fonts/Lumos-JRBj.ttf" id="12_uthl4"]
+
+[sub_resource type="Animation" id="Animation_cofjs"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_d8gvp"]
 resource_name = "player_runing"
@@ -33,39 +35,12 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("TextureRect:position")
 tracks/1/interp = 1
-tracks/1/loop_wrap = true
+tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5.75278, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-85, 507), Vector2(1123, 507)]
-}
-
-[sub_resource type="Animation" id="Animation_cofjs"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_hqnjj")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-126, 532)]
+"values": [Vector2(-147, 398), Vector2(533, 340), Vector2(994, 387)]
 }
 
 [sub_resource type="Animation" id="Animation_p36lv"]
@@ -104,15 +79,17 @@ texture = ExtResource("1_i5ijw")
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.841
-anchor_bottom = 1.0
-offset_left = -126.0
-offset_top = -12.968
-offset_right = 41.832
-offset_bottom = -25.968
+anchor_left = 0.126419
+anchor_top = 0.15225
+anchor_right = 1.45111
+anchor_bottom = 0.343604
+offset_left = -245.353
+offset_top = 295.309
+offset_right = 1280.7
+offset_bottom = 419.316
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_hqnjj")
+grow_vertical = 0
+texture = ExtResource("8_0cw65")
 expand_mode = 2
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true

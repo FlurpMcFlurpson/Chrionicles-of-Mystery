@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://dcokmqe8rfxi6"]
+
+[ext_resource type="Script" path="res://scripts/base_skills.gd" id="1_3rldn"]
+
+[resource]
+script = ExtResource("1_3rldn")
+skill_name = "Heal"
+description = "Returns 15 points of health"
+damage_ammount = -15
+action_point_cost = 5

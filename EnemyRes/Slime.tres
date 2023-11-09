@@ -9,3 +9,4 @@ name = " A slime"
 texture = ExtResource("2_d3wb1")
 health = 30
 damage = 20
+speed = 30
