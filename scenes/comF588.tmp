@@ -1,11 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://cjd2gwr12xu68"]
+[gd_scene load_steps=36 format=3 uid="uid://cjd2gwr12xu68"]
 
 [ext_resource type="Script" path="res://scripts/combat.gd" id="1_cgxm6"]
 [ext_resource type="Texture2D" uid="uid://bx08cxphtmw8m" path="res://art/battleback10.png" id="1_oola5"]
-[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://EnemyRes/Slime.tres" id="2_qp1c0"]
+[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://enemyRes/Slime.tres" id="2_qp1c0"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="2_vmu0p"]
 [ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="3_cv08u"]
-[ext_resource type="Resource" uid="uid://dcokmqe8rfxi6" path="res://EnemyRes/Heal.tres" id="3_qsdl3"]
 [ext_resource type="Texture2D" uid="uid://ccsururxv3j4w" path="res://art/player_combat.tres" id="4_j4qie"]
 [ext_resource type="Texture2D" uid="uid://dimdywpxrxve4" path="res://art/characters/slime/sprite_00.png" id="7_qgdky"]
 [ext_resource type="Texture2D" uid="uid://mhsy0dnocgei" path="res://art/characters/slime/sprite_17.png" id="8_b183f"]
@@ -207,7 +206,6 @@ grow_vertical = 2
 script = ExtResource("1_cgxm6")
 world_name = "combat"
 enemy = ExtResource("2_qp1c0")
-heal = ExtResource("3_qsdl3")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0

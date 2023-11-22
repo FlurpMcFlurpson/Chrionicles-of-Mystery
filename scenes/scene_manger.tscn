@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3f50vhsekn8b"]
+[gd_scene load_steps=8 format=3 uid="uid://b3f50vhsekn8b"]
 
 [ext_resource type="Script" path="res://scripts/scene_manger.gd" id="1_g701u"]
-[ext_resource type="PackedScene" uid="uid://bdlspnorq5pu4" path="res://scenes/world.tscn" id="2_v5vyh"]
+[ext_resource type="PackedScene" uid="uid://bdlspnorq5pu4" path="res://scenes/Maps/world.tscn" id="2_v5vyh"]
+[ext_resource type="PackedScene" uid="uid://cscer6fie13b7" path="res://Inventory/ui.tscn" id="3_smimu"]
 
 [sub_resource type="Animation" id="Animation_ssp7x"]
 length = 0.001
@@ -76,4 +77,10 @@ libraries = {
 "": SubResource("AnimationLibrary_31l4j")
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="inv_ui" parent="CanvasLayer" instance=ExtResource("3_smimu")]
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="world"]

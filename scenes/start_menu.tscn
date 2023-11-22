@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhj5obaplsqiq"]
+[gd_scene load_steps=18 format=3 uid="uid://bhj5obaplsqiq"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_8v75u"]
 [ext_resource type="Texture2D" uid="uid://bmixdqn710dri" path="res://art/Parallax_Backgrounds_Plains/0.png" id="1_i5ijw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bvfmedwfna4e1" path="res://art/characters/player/sprite_28.png" id="8_0cw65"]
 [ext_resource type="Texture2D" uid="uid://bqxgnoatovn3t" path="res://art/characters/player/sprite_29.png" id="9_p2na2"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="11_uqhnv"]
+[ext_resource type="AudioStream" uid="uid://dsmf6f31u0fx3" path="res://audio/instrumental-background-loop-148930.mp3" id="12_ihexk"]
 [ext_resource type="FontFile" uid="uid://cpuxi3wou6e2u" path="res://art/fonts/Lumos-JRBj.ttf" id="12_uthl4"]
 
 [sub_resource type="Animation" id="Animation_cofjs"]
@@ -76,20 +77,17 @@ grow_vertical = 2
 texture = ExtResource("1_i5ijw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(3052.1, 247.988)
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.126419
-anchor_top = 0.15225
-anchor_right = 1.45111
-anchor_bottom = 0.343604
-offset_left = -245.353
-offset_top = 295.309
-offset_right = 1280.7
-offset_bottom = 419.316
+anchor_left = -0.127604
+anchor_top = 0.614198
+anchor_right = 2.52179
+anchor_bottom = 0.996895
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_0cw65")
+texture = ExtResource("4_l6nwq")
 expand_mode = 2
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
@@ -97,10 +95,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Forgournd" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.00260417
-anchor_top = -0.00154321
-anchor_right = 0.997396
-anchor_bottom = 0.998457
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_5fru0")
@@ -195,6 +191,11 @@ theme_override_font_sizes/font_size = 73
 text = "The Choronicles
  Of Mystery"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ihexk")
+volume_db = -23.665
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Setting_button" to="." method="_on_setting_button_pressed"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://cky4yvncwolbt"]
+
+[ext_resource type="Script" path="res://scripts/UI/settings_ui.gd" id="1_loo3g"]
+[ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="1_rei3x"]
+
+[node name="Settings" type="Panel"]
+visible = false
+script = ExtResource("1_loo3g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -127.0
+offset_right = 85.5
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Settings_header" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(112, 39)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_rei3x")
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+
+[node name="Save_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("1_rei3x")
+theme_override_font_sizes/font_size = 36
+text = "Save Game"
+
+[node name="Quit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("1_rei3x")
+theme_override_font_sizes/font_size = 36
+text = "Quit to Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Quit_button" to="." method="_on_quit_button_pressed"]

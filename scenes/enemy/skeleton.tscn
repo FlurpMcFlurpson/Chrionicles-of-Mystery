@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl3emxh5terbm"]
+[gd_scene load_steps=6 format=3 uid="uid://btvd2xn0dw5wh"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_sdy4v"]
-[ext_resource type="SpriteFrames" uid="uid://xn6p6sr8rpwf" path="res://art/characters/slime.tres" id="2_ltlk8"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_csbyn"]
+[ext_resource type="SpriteFrames" uid="uid://xn6p6sr8rpwf" path="res://art/characters/slime.tres" id="2_naoh1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd8nl"]
 radius = 32.0156
@@ -13,10 +13,10 @@ radius = 7.0
 radius = 8.0
 
 [node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_sdy4v")
+script = ExtResource("1_csbyn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_ltlk8")
+sprite_frames = ExtResource("2_naoh1")
 animation = &"walk"
 offset = Vector2(0, -6.025)
 

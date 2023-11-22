@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://vun1ch68ysi"]
+
+[ext_resource type="Script" path="res://inventory_ui.gd" id="1_gt5t3"]
+[ext_resource type="Texture2D" uid="uid://cn0egbmuk62ax" path="res://art/icon.svg" id="1_podbf"]
+
+[node name="Inventory" type="Panel"]
+visible = false
+script = ExtResource("1_gt5t3")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -230.5
+offset_right = 173.5
+offset_bottom = 230.5
+grow_horizontal = 2
+grow_vertical = 2
+max_text_lines = 10
+item_count = 4
+icon_scale = 0.25
+item_0/text = "Testing"
+item_0/icon = ExtResource("1_podbf")
+item_1/text = "Item 2"
+item_2/text = "Item 3 "
+item_3/text = "Item 4"
+
+[connection signal="item_activated" from="ItemList" to="." method="_on_item_list_item_activated"]

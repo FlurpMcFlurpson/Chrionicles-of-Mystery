@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
+@export var inventory: Inventory
 var enemy_Inragne = false
 var enemy_cooldown =true
-var health = 1000
 var alive = true
-const SPEED = 100.0
+var SPEED = PlayerState.base_speed
 var current_dir = "right"
 var attacking = false
 
@@ -78,8 +78,7 @@ func _on_player_hitbox_body_exited(body):
 
 
 
-func _on_attack_cooldown_timeout():
-	enemy_cooldown = true
+
 
 func _on_player_clooldown_timeout():
 	$player_clooldown.stop()

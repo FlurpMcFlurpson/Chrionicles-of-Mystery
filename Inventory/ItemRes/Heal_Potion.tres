@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Inv_Item" load_steps=3 format=3 uid="uid://o7gokqvywtn2"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_01fkq"]
+[ext_resource type="Texture2D" uid="uid://cn0egbmuk62ax" path="res://art/icon.svg" id="2_ymad7"]
+
+[resource]
+script = ExtResource("1_01fkq")
+name = "Health Potions"
+descripion = "Heals for 10 points when consumed"
+texture = ExtResource("2_ymad7")
