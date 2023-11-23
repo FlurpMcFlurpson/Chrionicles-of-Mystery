@@ -80,7 +80,6 @@ libraries = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="inv_ui" parent="CanvasLayer" instance=ExtResource("3_smimu")]
+visible = false
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-
-[editable path="world"]

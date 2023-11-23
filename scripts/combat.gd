@@ -15,6 +15,7 @@ func _ready():
 	set_health($PlayerContainer/ProgressBar, PlayerState.current_health, PlayerState.max_health)
 	$EnemyContainer/Enemy.texture = enemy.texture
 	$Panel/Action_text.hide()
+	$Panel/Inventory.hide()
 	$BattleMusic.play()
 	display_text("A wild %s apppers!" % enemy.name)
 	current_enemy_health = enemy.health
@@ -110,12 +111,12 @@ func check_end_combat():
 		await get_tree().create_timer(0.25).timeout
 		get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
 	if current_enemy_health == 0:
-		print("enmey_turn")
 		$AnimationPlayer.play("enemy_death")
 		display_text("%s has been defeated" % enemy.name)
 		await(textbox_closed)
 		PlayerState.experience_points = PlayerState.experience_points + experice_gained
 		display_text("%s has gain %d experience points!" % [PlayerState.player_name , experice_gained])
+		display_text("%s has droped an item!" % enemy.name)
 		await (textbox_closed)
 		await get_tree().create_timer(0.25).timeout
 		PlayerState.current_health = current_player_health
@@ -124,8 +125,13 @@ func check_end_combat():
 		emit_signal("world_changed", world_name)
 		global.transition_scene = false
 		global.just_in_combat = false
+		get_tree().call_group("Items","update_inv")
 
 func _on_block_pressed():
 	block_active = true
 	enemy_attack()
-	
+func _on_items_toggled(button_pressed):
+	if(button_pressed):
+		$Panel/Inventory.show()
+	else:
+		$Panel/Inventory.hide()

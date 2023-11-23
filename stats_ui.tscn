@@ -27,6 +27,7 @@ texture = ExtResource("1_4mx1m")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(109, 39)
+layout_mode = 0
 offset_left = 149.0
 offset_top = 205.0
 offset_right = 237.0
@@ -38,6 +39,7 @@ text = "Player"
 
 [node name="Label2" type="Label" parent="."]
 custom_minimum_size = Vector2(264, 39)
+layout_mode = 0
 offset_left = 69.0
 offset_top = 250.0
 offset_right = 333.0

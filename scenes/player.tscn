@@ -1,7 +1,6 @@
-[gd_scene load_steps=58 format=3 uid="uid://bdvsth3178m5q"]
+[gd_scene load_steps=57 format=3 uid="uid://bdvsth3178m5q"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_av1nv"]
-[ext_resource type="Resource" uid="uid://l5vcdihboy6l" path="res://Inventory/player_Inv.tres" id="2_3ctd7"]
 [ext_resource type="Texture2D" uid="uid://dstflys7ns6tv" path="res://art/characters/player.png" id="2_3yap3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsdtj"]
@@ -426,7 +425,6 @@ y_sort_enabled = true
 position = Vector2(3, 2)
 collision_layer = 3
 script = ExtResource("1_av1nv")
-inventory = ExtResource("2_3ctd7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 6)

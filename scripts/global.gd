@@ -12,7 +12,7 @@ var player_coast_pos = Vector2(186, 8)
 var game_init_load = false
 var current_world_name = ""
 var just_in_combat = false
-
+signal item_drop
 
 
 

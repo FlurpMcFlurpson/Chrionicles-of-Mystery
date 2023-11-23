@@ -1,0 +1,17 @@
+{
+	"0": {
+	  "Name": "Sword",
+	  "Image": "sword.png",
+	  "Description": "Add +5 damage"
+	},
+	"1": {
+	  "Name": "Hammer",
+	  "Image": "hammer.png",
+	  "Description": "Add +6 damage"
+	},
+	"2": {
+	  "Name": "Health Potion",
+	  "Image": "red_potion.png",
+	  "Description": "Heals for 10 HP"
+	}
+}

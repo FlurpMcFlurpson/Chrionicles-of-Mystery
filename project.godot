@@ -19,6 +19,7 @@ config/icon="res://art/icon.svg"
 
 global="*res://scripts/global.gd"
 PlayerState="*res://scripts/player/player_state.gd"
+ItemData="*res://scripts/item_data.gd"
 
 [display]
 

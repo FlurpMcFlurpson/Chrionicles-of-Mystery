@@ -1,6 +1,4 @@
 extends CharacterBody2D
-
-@export var inventory: Inventory
 var enemy_Inragne = false
 var enemy_cooldown =true
 var alive = true
