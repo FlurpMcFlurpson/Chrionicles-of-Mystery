@@ -1,5 +1,3 @@
-extends Resource
+extends PanelContainer
 
-class_name Inventory
-
-@export var items: Array[Inv_Item]
+const Slot = preload("res://Inventory/slot.tscn")

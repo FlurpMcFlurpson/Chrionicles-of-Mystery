@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3f50vhsekn8b"]
+[gd_scene load_steps=9 format=3 uid="uid://b3f50vhsekn8b"]
 
 [ext_resource type="Script" path="res://scripts/scene_manger.gd" id="1_g701u"]
 [ext_resource type="PackedScene" uid="uid://bdlspnorq5pu4" path="res://scenes/Maps/world.tscn" id="2_v5vyh"]
-[ext_resource type="PackedScene" uid="uid://cscer6fie13b7" path="res://Inventory/ui.tscn" id="3_smimu"]
+[ext_resource type="PackedScene" uid="uid://cscer6fie13b7" path="res://Inventory/old_inventory/ui.tscn" id="3_smimu"]
+[ext_resource type="PackedScene" uid="uid://vun1ch68ysi" path="res://inventory_ui.tscn" id="4_sg0uo"]
 
 [sub_resource type="Animation" id="Animation_ssp7x"]
 length = 0.001
@@ -77,9 +78,19 @@ libraries = {
 "": SubResource("AnimationLibrary_31l4j")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="inv_ui" parent="CanvasLayer" instance=ExtResource("3_smimu")]
+[node name="menu_ui" parent="UI" instance=ExtResource("3_smimu")]
 visible = false
+
+[node name="Inv_interface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" parent="UI/Inv_interface" instance=ExtResource("4_sg0uo")]
+layout_mode = 0
+anchors_preset = 0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

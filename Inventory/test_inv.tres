@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://csh1k027dds41"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_data.gd" id="1_eot5u"]
+[ext_resource type="Resource" uid="uid://cmf6a5wyxk82t" path="res://Items/Repo/Healing_potion.tres" id="2_34u63"]
+[ext_resource type="Script" path="res://Inventory/slot_data.gd" id="3_lg12v"]
+[ext_resource type="Resource" uid="uid://moojtro0vgfc" path="res://Items/Repo/Wooden_Sword.tres" id="4_o48vx"]
+
+[sub_resource type="Resource" id="Resource_vn2np"]
+script = ExtResource("3_lg12v")
+item_data = ExtResource("2_34u63")
+quantity = 18
+
+[sub_resource type="Resource" id="Resource_2vx74"]
+script = ExtResource("3_lg12v")
+item_data = ExtResource("4_o48vx")
+quantity = 1
+
+[resource]
+script = ExtResource("1_eot5u")
+slot_datas = Array[ExtResource("3_lg12v")]([null, null, SubResource("Resource_vn2np"), null, null, null, SubResource("Resource_2vx74"), null, null, null])

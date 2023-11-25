@@ -1,9 +1,11 @@
+
 extends ItemList
 
+@export var Item_data: Resource
 
 func add_slot(ID ="0"):
-	var item_texture =load("res://art//items/"+ ItemData.get_texture_name(ID))
-	var item_name = ItemData.get_item_name(ID)
+	var item_texture =Item_data.getTexture()
+	var item_name = Item_data.getName()
 	add_item(item_name,item_texture)
 
 
