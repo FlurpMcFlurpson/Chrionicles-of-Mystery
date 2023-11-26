@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cscql4tfgceh3"]
+
+[ext_resource type="Script" path="res://Inventory/Inv_interface.gd" id="1_w7uor"]
+[ext_resource type="PackedScene" uid="uid://cbgsq8af25gyk" path="res://Inventory/inventory.tscn" id="2_0liv1"]
+[ext_resource type="PackedScene" uid="uid://c80p3bm57xwn4" path="res://stats_ui.tscn" id="2_fu65c"]
+[ext_resource type="PackedScene" uid="uid://dtjyucnhqho0t" path="res://Inventory/slot.tscn" id="3_6ihvy"]
+
+[node name="Inv_interface" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1112.0
+offset_bottom = 608.0
+script = ExtResource("1_w7uor")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stats" parent="Panel/HBoxContainer" instance=ExtResource("2_fu65c")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Inventory" parent="Panel/HBoxContainer" instance=ExtResource("2_0liv1")]
+visible = false
+layout_mode = 2
+
+[node name="HeldSlot" parent="." instance=ExtResource("3_6ihvy")]
+visible = false
+modulate = Color(1, 1, 1, 0.494118)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0

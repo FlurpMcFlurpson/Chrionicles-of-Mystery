@@ -21,17 +21,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(194, 107)
+position = Vector2(167, 143)
 scale = Vector2(4.91667, 4.85417)
 texture = ExtResource("1_4mx1m")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(109, 39)
 layout_mode = 0
-offset_left = 149.0
-offset_top = 205.0
-offset_right = 237.0
-offset_bottom = 244.0
+offset_left = 111.0
+offset_top = 275.0
+offset_right = 220.0
+offset_bottom = 314.0
 theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_8i82h")
@@ -40,10 +40,10 @@ text = "Player"
 [node name="Label2" type="Label" parent="."]
 custom_minimum_size = Vector2(264, 39)
 layout_mode = 0
-offset_left = 69.0
-offset_top = 250.0
-offset_right = 333.0
-offset_bottom = 289.0
+offset_left = 32.0
+offset_top = 343.0
+offset_right = 296.0
+offset_bottom = 382.0
 theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_8i82h")
@@ -52,22 +52,28 @@ text = "Current Level: 0"
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(579, 488)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.398754
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -17.4361
+anchor_bottom = 0.5
+offset_left = -579.0
+offset_top = -244.0
+offset_bottom = 244.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jhbh5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/separation = 8
 alignment = 1
 
-[node name="Stat_header" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Stat_header" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(112, 39)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,37 +82,87 @@ theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 text = "Stats:"
 
-[node name="Vitality" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Vitality" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(109, 39)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 text = "Vitality: 1"
 
-[node name="agility" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="agility" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(109, 39)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 text = "agility: 1"
 
-[node name="strength" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="strength" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(109, 39)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 text = "strength: 1"
 
-[node name="defense" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="defense" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(109, 39)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 text = "Defense: 1"
 
-[node name="luck" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="luck" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(109, 39)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3c0up")
 theme_override_font_sizes/font_size = 35
 text = "Luck: 1"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Stat_header" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(112, 39)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_3c0up")
+theme_override_font_sizes/font_size = 35
+
+[node name="Vitality" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(109, 39)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3c0up")
+theme_override_font_sizes/font_size = 35
+text = "+"
+
+[node name="agility" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(109, 39)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3c0up")
+theme_override_font_sizes/font_size = 35
+text = "+"
+
+[node name="strength" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(109, 39)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3c0up")
+theme_override_font_sizes/font_size = 35
+text = "+"
+
+[node name="defense" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(109, 39)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3c0up")
+theme_override_font_sizes/font_size = 35
+text = "+"
+
+[node name="luck" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(109, 39)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3c0up")
+theme_override_font_sizes/font_size = 35
+text = "+"

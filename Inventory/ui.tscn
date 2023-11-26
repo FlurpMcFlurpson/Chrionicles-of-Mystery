@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cscer6fie13b7"]
+[gd_scene load_steps=3 format=3 uid="uid://cdwxu8ott1xgx"]
 
-[ext_resource type="Script" path="res://scripts/UI/inv_ui.gd" id="1_pfnjo"]
-[ext_resource type="PackedScene" uid="uid://cky4yvncwolbt" path="res://settings_ui.tscn" id="4_6kt1a"]
+[ext_resource type="Script" path="res://scripts/UI/inv_ui.gd" id="1_gb0i6"]
+[ext_resource type="PackedScene" uid="uid://cky4yvncwolbt" path="res://settings_ui.tscn" id="2_ugtoe"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pfnjo")
+script = ExtResource("1_gb0i6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -24,6 +24,6 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="Settings" parent="MarginContainer" instance=ExtResource("4_6kt1a")]
+[node name="Settings" parent="MarginContainer" instance=ExtResource("2_ugtoe")]
 visible = true
 layout_mode = 2

@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtjyucnhqho0t"]
 
-[ext_resource type="Texture2D" uid="uid://cn0egbmuk62ax" path="res://art/icon.svg" id="1_lnpks"]
+[ext_resource type="Script" path="res://Inventory/slot.gd" id="1_ntejr"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="2_41d4b"]
 
 [node name="Slot" type="PanelContainer"]
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_ntejr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -17,13 +18,15 @@ theme_override_constants/margin_bottom = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_lnpks")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="QuanitityLabel" type="Label" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_41d4b")
 text = "x99"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

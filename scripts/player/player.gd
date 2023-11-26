@@ -5,10 +5,14 @@ var alive = true
 var SPEED = PlayerState.base_speed
 var current_dir = "right"
 var attacking = false
+@export var inv_data: InventoryData
+signal toggle_menu()
+signal toggle_inv()
 
 func _physics_process(delta):
 	player_movement(delta)
 	current_cam()
+
 
 func player_movement(delta):
 	if Input.is_action_pressed("Right"):
@@ -75,14 +79,6 @@ func _on_player_hitbox_body_exited(body):
 		enemy_Inragne = false
 
 
-
-
-
-func _on_player_clooldown_timeout():
-	$player_clooldown.stop()
-	global.player_attacking = false
-	attacking = false
-	
 func  current_cam():
 	if global.current_scene =="world":
 		#print("worldcam on")
@@ -92,3 +88,12 @@ func  current_cam():
 		#print("coastcam on")
 		$world_cam.enabled = false
 		$coast_cam.enabled = true
+
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if Input.is_action_just_pressed("Open_menu"):
+		toggle_menu.emit()
+		
+	if Input.is_action_just_pressed("Open_inv"):
+		toggle_inv.emit()
+	
