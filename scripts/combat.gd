@@ -3,10 +3,12 @@ signal world_changed(world_name)
 @export var world_name = ""
 signal textbox_closed
 @export var enemy: Resource
+@export var slot_data: SlotData
 var current_player_health = 0
 var current_enemy_health = 0
 var block_active = false
 var experice_gained = randf_range(50,200)
+signal item_drop
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +17,6 @@ func _ready():
 	set_health($PlayerContainer/ProgressBar, PlayerState.current_health, PlayerState.max_health)
 	$EnemyContainer/Enemy.texture = enemy.texture
 	$Panel/Action_text.hide()
-	$Panel/Inventory.hide()
 	$BattleMusic.play()
 	display_text("A wild %s apppers!" % enemy.name)
 	current_enemy_health = enemy.health
@@ -130,8 +131,4 @@ func check_end_combat():
 func _on_block_pressed():
 	block_active = true
 	enemy_attack()
-func _on_items_toggled(button_pressed):
-	if(button_pressed):
-		$Panel/Inventory.show()
-	else:
-		$Panel/Inventory.hide()
+

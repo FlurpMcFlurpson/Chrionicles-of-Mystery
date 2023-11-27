@@ -14,9 +14,22 @@ func set_quantity(value: int):
 		push_error("%s is not stackable"% item_data.Item_name)
 		
 		
+		
 func can_merge_with(other_slot_data :SlotData) -> bool:
 	return item_data == other_slot_data.item_data \
 		and item_data.stackable \
+		and quantity < MAX_STACK_SIZE
+		
+func can_merge_all_with(other_slot_data :SlotData) -> bool:
+	return item_data == other_slot_data.item_data \
+		and item_data.stackable \
 		and quantity + other_slot_data.quantity < MAX_STACK_SIZE
+
 func  merge_with(other_slot_data :SlotData):
 	quantity += other_slot_data.quantity
+
+func make_single_slot() -> SlotData:
+	var new_slot_data = duplicate()
+	new_slot_data.quantity = 1
+	quantity -= 1
+	return new_slot_data

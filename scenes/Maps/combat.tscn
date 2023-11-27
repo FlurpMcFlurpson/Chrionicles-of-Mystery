@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cjd2gwr12xu68"]
+[gd_scene load_steps=36 format=3 uid="uid://cjd2gwr12xu68"]
 
 [ext_resource type="Script" path="res://scripts/combat.gd" id="1_gxtrx"]
 [ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://enemyRes/Slime.tres" id="2_kgu4v"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="5_6uf8k"]
 [ext_resource type="Texture2D" uid="uid://ccsururxv3j4w" path="res://art/player_combat.tres" id="6_mj2pb"]
 [ext_resource type="Texture2D" uid="uid://dimdywpxrxve4" path="res://art/characters/slime/sprite_00.png" id="7_6md2j"]
-[ext_resource type="PackedScene" uid="uid://vun1ch68ysi" path="res://inventory_ui.tscn" id="7_lghx2"]
 [ext_resource type="Texture2D" uid="uid://mhsy0dnocgei" path="res://art/characters/slime/sprite_17.png" id="8_7akr6"]
 [ext_resource type="Texture2D" uid="uid://c57uffewocmgr" path="res://art/characters/slime/sprite_18.png" id="9_va27u"]
 [ext_resource type="Texture2D" uid="uid://bpm6x6buxjntw" path="res://art/characters/slime/sprite_19.png" id="10_nmc2o"]
@@ -403,13 +402,6 @@ text = "
 A slime apperes!"
 autowrap_mode = 3
 
-[node name="Inventory" parent="Panel" instance=ExtResource("7_lghx2")]
-layout_mode = 1
-offset_left = 176.0
-offset_top = 8.0
-offset_right = -7.99927
-offset_bottom = -8.00021
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_4x4in")
@@ -425,5 +417,4 @@ volume_db = -19.665
 
 [connection signal="pressed" from="Panel/ActionMenu/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Panel/ActionMenu/Block" to="." method="_on_block_pressed"]
-[connection signal="toggled" from="Panel/ActionMenu/Items" to="." method="_on_items_toggled"]
 [connection signal="pressed" from="Panel/ActionMenu/Run" to="." method="_on_run_pressed"]

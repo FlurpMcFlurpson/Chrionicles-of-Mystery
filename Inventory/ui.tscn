@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdwxu8ott1xgx"]
+[gd_scene load_steps=4 format=3 uid="uid://cdwxu8ott1xgx"]
 
 [ext_resource type="Script" path="res://scripts/UI/inv_ui.gd" id="1_gb0i6"]
+[ext_resource type="PackedScene" uid="uid://c80p3bm57xwn4" path="res://stats_ui.tscn" id="2_1f0ea"]
 [ext_resource type="PackedScene" uid="uid://cky4yvncwolbt" path="res://settings_ui.tscn" id="2_ugtoe"]
 
 [node name="UI" type="Control"]
+custom_minimum_size = Vector2(1003, 502)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 83.0
+offset_top = 66.0
+offset_right = -66.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_gb0i6")
 
 [node name="Tab" type="TabContainer" parent="."]
@@ -19,7 +27,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+tab_alignment = 1
+
+[node name="Stats" parent="Tab" instance=ExtResource("2_1f0ea")]
+layout_mode = 2
 
 [node name="Settings" parent="Tab" instance=ExtResource("2_ugtoe")]
-visible = true
 layout_mode = 2

@@ -6,8 +6,7 @@ var SPEED = PlayerState.base_speed
 var current_dir = "right"
 var attacking = false
 @export var inv_data: InventoryData
-signal toggle_menu()
-signal toggle_inv()
+
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -89,11 +88,3 @@ func  current_cam():
 		$world_cam.enabled = false
 		$coast_cam.enabled = true
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Open_menu"):
-		toggle_menu.emit()
-		
-		
-	if Input.is_action_just_pressed("Open_inv"):
-		toggle_inv.emit()
-		

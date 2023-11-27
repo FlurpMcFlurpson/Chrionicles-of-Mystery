@@ -14,8 +14,8 @@ var next_world_name :String
 func _ready():
 	current_world.connect("world_changed",self.handle_world_chagned)
 	inv_interface.set_player_inv_data(player.inv_data)
-	player.toggle_menu.connect(toggle_menu_interface)
-	player.toggle_inv.connect(toggle_inv_interface)
+	
+	
 	
 func toggle_inv_interface():
 	inv_interface.visible = not inv_interface.visible

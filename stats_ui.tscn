@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c80p3bm57xwn4"]
+[gd_scene load_steps=6 format=3 uid="uid://c80p3bm57xwn4"]
 
 [ext_resource type="Texture2D" uid="uid://cic5nk7g4pk2p" path="res://art/characters/player/sprite_00.png" id="1_4mx1m"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="2_3c0up"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spwd2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8i82h"]
 bg_color = Color(0, 0, 0, 0.184314)
@@ -19,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_spwd2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(167, 143)
@@ -66,7 +70,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jhbh5")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
