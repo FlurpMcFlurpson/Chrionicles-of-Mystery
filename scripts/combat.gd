@@ -125,7 +125,7 @@ func check_end_combat():
 		emit_signal("world_changed", world_name)
 		global.transition_scene = false
 		global.just_in_combat = false
-		get_tree().call_group("Items","update_inv")
+		
 
 func _on_block_pressed():
 	block_active = true

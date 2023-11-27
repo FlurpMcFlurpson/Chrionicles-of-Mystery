@@ -14,29 +14,26 @@ offset_right = 1112.0
 offset_bottom = 608.0
 script = ExtResource("1_w7uor")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Inventory" parent="." instance=ExtResource("2_0liv1")]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 0.0
+offset_bottom = 4.0
+grow_horizontal = 0
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="Stats" parent="." instance=ExtResource("2_fu65c")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Stats" parent="Panel/HBoxContainer" instance=ExtResource("2_fu65c")]
-layout_mode = 2
+anchors_preset = -1
+anchor_right = 0.610075
 size_flags_horizontal = 3
-
-[node name="Inventory" parent="Panel/HBoxContainer" instance=ExtResource("2_0liv1")]
-visible = false
-layout_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="HeldSlot" parent="." instance=ExtResource("3_6ihvy")]
 visible = false

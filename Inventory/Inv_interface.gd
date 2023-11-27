@@ -1,12 +1,13 @@
 extends Control
 
 var held_slot_data: SlotData
-@onready var inventory = $Panel/HBoxContainer/Inventory
+@onready var inventory = $Inventory
 @onready var held_slot = $HeldSlot
 
 func _physics_process(delta):
 	if held_slot.visible:
 		held_slot.global_position = get_global_mouse_position() + Vector2(5,5)
+		
 
 func set_player_inv_data(inv_data: InventoryData):
 	inv_data.inv_interact.connect(on_inv_interact)

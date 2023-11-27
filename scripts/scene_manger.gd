@@ -18,14 +18,11 @@ func _ready():
 	player.toggle_inv.connect(toggle_inv_interface)
 	
 func toggle_inv_interface():
-	if Menu.visible:
-		not inv_interface.visible
-	else :
-		inv_interface.visible = not inv_interface.visible
+	inv_interface.visible = not inv_interface.visible
 	
 
 func toggle_menu_interface():
-		Menu.visible = not Menu.visible
+	Menu.visible = not Menu.visible
 
 func handle_world_chagned(current_world_name:String):
 	next_world_name = global.scene_entered

@@ -90,10 +90,10 @@ func  current_cam():
 		$coast_cam.enabled = true
 
 func _unhandled_input(event: InputEvent) -> void:
-	
 	if Input.is_action_just_pressed("Open_menu"):
 		toggle_menu.emit()
 		
+		
 	if Input.is_action_just_pressed("Open_inv"):
 		toggle_inv.emit()
-	
+		

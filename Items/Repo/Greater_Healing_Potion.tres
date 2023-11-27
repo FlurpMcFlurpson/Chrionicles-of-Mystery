@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Health_item" load_steps=4 format=3 uid="uid://bu2xjkuy076ge"]
+
+[ext_resource type="Texture2D" uid="uid://c6ahklcadjnl5" path="res://Items/BG 6.png" id="1_qwask"]
+[ext_resource type="Script" path="res://Items/Classes/Health_items.gd" id="1_t4bvn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kerfe"]
+atlas = ExtResource("1_qwask")
+region = Rect2(128.647, 288.728, 30.6747, 30.5395)
+
+[resource]
+script = ExtResource("1_t4bvn")
+HealthRestored = 50
+Item_name = "Greater Healing Potion"
+Item_texture = SubResource("AtlasTexture_kerfe")
+Item_text = "A potion that heals the user for 50 hitponits"
+stackable = true
