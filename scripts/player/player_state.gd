@@ -1,5 +1,6 @@
 extends Node
 
+var player
 var player_curent_posx = 100
 var player_curent_posy = 100
 var current_health = 25
@@ -18,6 +19,9 @@ var defense = 1
 var luck = 6
 
 
+
+func use_slot_data(slot_data: SlotData):
+	slot_data.item_data.use(player)
 
 #leveling system
 func leveling():

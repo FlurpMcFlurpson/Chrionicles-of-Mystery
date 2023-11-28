@@ -194,7 +194,7 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ihexk")
-volume_db = -23.665
+volume_db = -18.665
 autoplay = true
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]

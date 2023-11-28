@@ -9,8 +9,8 @@ region = Rect2(128.647, 288.728, 30.6747, 30.5395)
 
 [resource]
 script = ExtResource("1_t4bvn")
-HealthRestored = 50
+HealthRestored = 25
 Item_name = "Greater Healing Potion"
 Item_texture = SubResource("AtlasTexture_kerfe")
-Item_text = "A potion that heals the user for 50 hitponits"
+Item_text = "A potion that heals the user for 25 hitponits"
 stackable = true

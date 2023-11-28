@@ -3,7 +3,6 @@ signal world_changed(world_name)
 @export var world_name = ""
 signal textbox_closed
 @export var enemy: Resource
-@export var slot_data: SlotData
 var current_player_health = 0
 var current_enemy_health = 0
 var block_active = false
@@ -23,7 +22,11 @@ func _ready():
 	current_player_health = PlayerState.current_health
 
 
-
+func  update_health():
+	print("heath updated")
+	if current_player_health != PlayerState.current_health:
+		current_player_health = PlayerState.current_health
+		set_health($PlayerContainer/ProgressBar, current_player_health, PlayerState.max_health)
 
 
 
@@ -101,7 +104,7 @@ func _on_attack_pressed():
 	else:
 		await enemy_attack()
 		player_attack()
-	#print("testing")
+		
 func check_end_combat():
 	if current_player_health == 0:
 		$AnimationPlayer.play("player_death")
@@ -132,3 +135,6 @@ func _on_block_pressed():
 	block_active = true
 	enemy_attack()
 
+
+func _on_items_pressed():
+	get_tree().call_group("inv_group","Toggle_inv")

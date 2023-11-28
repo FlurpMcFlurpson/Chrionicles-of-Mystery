@@ -17,3 +17,5 @@ func getDescription() -> String:
 	return Item_text
 
 
+func use(target) -> void:
+	pass

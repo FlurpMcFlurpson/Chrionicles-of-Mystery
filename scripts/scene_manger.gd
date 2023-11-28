@@ -27,7 +27,6 @@ func toggle_menu_interface():
 func handle_world_chagned(current_world_name:String):
 	next_world_name = global.scene_entered
 	next_world = load("res://scenes/Maps/"+next_world_name+".tscn").instantiate()
-	print("testing")
 	next_world.z_index = -1
 	add_child(next_world)
 	anim.play("fade_in")

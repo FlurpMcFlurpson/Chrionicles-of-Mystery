@@ -8,6 +8,9 @@ var attacking = false
 @export var inv_data: InventoryData
 
 
+func _ready():
+	PlayerState.player = self
+
 func _physics_process(delta):
 	player_movement(delta)
 	current_cam()
@@ -79,12 +82,27 @@ func _on_player_hitbox_body_exited(body):
 
 
 func  current_cam():
-	if global.current_scene =="world":
-		#print("worldcam on")
-		$world_cam.enabled = true
-		$coast_cam.enabled = false
-	elif global.current_scene =="coast":
-		#print("coastcam on")
-		$world_cam.enabled = false
-		$coast_cam.enabled = true
+	
+	match global.current_scene:
+		
+		"world":
+			$world_cam.enabled = true
+			$coast_cam.enabled = false
+		"coast":
+			print("coastcam on")
+			$world_cam.enabled = false
+			$coast_cam.enabled = false
+		"combat":
+			$world_cam.enabled = false
+			$coast_cam.enabled = false
 
+
+func heal(healthRestored: int):
+	if PlayerState.current_health <= PlayerState.max_health:
+		PlayerState.current_health += healthRestored
+		get_tree().call_group("combat","update_health")
+		if  PlayerState.current_health > PlayerState.max_health:
+			PlayerState.current_health = PlayerState.max_health
+			get_tree().call_group("combat","update_health")
+	else:
+		return

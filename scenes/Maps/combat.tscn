@@ -1,7 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://cjd2gwr12xu68"]
+[gd_scene load_steps=37 format=3 uid="uid://cjd2gwr12xu68"]
 
 [ext_resource type="Script" path="res://scripts/combat.gd" id="1_gxtrx"]
-[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://enemyRes/Slime.tres" id="2_kgu4v"]
+[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://EnemyRes/Slime.tres" id="2_kgu4v"]
 [ext_resource type="Texture2D" uid="uid://bx08cxphtmw8m" path="res://art/battleback10.png" id="3_gytai"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="4_fw2ga"]
 [ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="5_6uf8k"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dj83b2qysd81g" path="res://art/characters/player/sprite_50.png" id="22_34q8w"]
 [ext_resource type="AudioStream" uid="uid://djmkb82enflgo" path="res://audio/hitHurt.wav" id="23_5j46x"]
 [ext_resource type="AudioStream" uid="uid://q4pl4gi37r" path="res://audio/battle-intro-126837.mp3" id="24_gfm0v"]
+[ext_resource type="PackedScene" uid="uid://bdvsth3178m5q" path="res://scenes/player.tscn" id="25_5f0ls"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5eus"]
 bg_color = Color(0.619608, 0.0784314, 0.101961, 1)
@@ -196,7 +197,7 @@ _data = {
 "player_death": SubResource("Animation_suybd")
 }
 
-[node name="combat" type="Control"]
+[node name="combat" type="Control" groups=["combat"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -415,6 +416,18 @@ volume_db = -18.0
 stream = ExtResource("24_gfm0v")
 volume_db = -19.665
 
+[node name="player" parent="." instance=ExtResource("25_5f0ls")]
+visible = false
+
+[node name="world_cam" parent="player" index="3"]
+visible = false
+
+[node name="coast_cam" parent="player" index="4"]
+visible = false
+
 [connection signal="pressed" from="Panel/ActionMenu/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Panel/ActionMenu/Block" to="." method="_on_block_pressed"]
+[connection signal="pressed" from="Panel/ActionMenu/Items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="Panel/ActionMenu/Run" to="." method="_on_run_pressed"]
+
+[editable path="player"]

@@ -56,3 +56,15 @@ func item_drop(slot_data: SlotData) -> bool:
 			return true
 	return false
 
+func use_slot_data(index: int):
+	var slot_data = slot_datas[index]
+	if not slot_data:
+		return
+		
+	if slot_data.item_data is Health_item:
+		slot_data.quantity -= 1
+		if slot_data.quantity <= 0:
+			slot_datas[index] = null
+	print(slot_data.item_data.Item_name)
+	PlayerState.use_slot_data(slot_data)
+	inv_updated.emit(self)

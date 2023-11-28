@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cbgsq8af25gyk" path="res://Inventory/inventory.tscn" id="2_0liv1"]
 [ext_resource type="PackedScene" uid="uid://dtjyucnhqho0t" path="res://Inventory/slot.tscn" id="3_6ihvy"]
 
-[node name="Inv_interface" type="Control"]
+[node name="Inv_interface" type="Control" groups=["inv_group"]]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 40.0

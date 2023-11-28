@@ -90,3 +90,4 @@ visible = false
 
 [editable path="world"]
 [editable path="UI/Inv_interface"]
+[editable path="UI/Inv_interface/Inventory"]

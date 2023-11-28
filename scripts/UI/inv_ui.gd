@@ -1,11 +1,5 @@
 extends Control
 
-@onready var Vitality = $TabContainer/Stats/PanelContainer/VBoxContainer/Vitality
-@onready var agility = $TabContainer/Stats/PanelContainer/VBoxContainer/agility
-@onready var strength = $TabContainer/Stats/PanelContainer/VBoxContainer/strength
-@onready var luck = $TabContainer/Stats/PanelContainer/VBoxContainer/luck
-@onready var defense = $TabContainer/Stats/PanelContainer/VBoxContainer/defense
-
 var is_open = false
 
 func _ready():
