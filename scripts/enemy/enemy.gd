@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+@export var enemy_name: String
 var speed = 80
 var player_follow = false
 var player = null
@@ -17,6 +17,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = false
 	else:
 		$AnimatedSprite2D.play("idle")
+	move_and_slide()
 		
 
 

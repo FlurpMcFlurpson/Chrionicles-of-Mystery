@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://cjd2gwr12xu68"]
 
 [ext_resource type="Script" path="res://scripts/combat.gd" id="1_gxtrx"]
-[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://EnemyRes/Slime.tres" id="2_kgu4v"]
+[ext_resource type="Resource" uid="uid://t80pg3j03r8h" path="res://enemyRes/Skeleton.tres" id="2_hfvnb"]
 [ext_resource type="Texture2D" uid="uid://bx08cxphtmw8m" path="res://art/battleback10.png" id="3_gytai"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="4_fw2ga"]
 [ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="5_6uf8k"]
@@ -206,7 +206,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gxtrx")
 world_name = "combat"
-enemy = ExtResource("2_kgu4v")
+enemy = ExtResource("2_hfvnb")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -260,6 +260,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 texture = ExtResource("5_6uf8k")
+stretch_mode = 5
 flip_h = true
 
 [node name="PlayerContainer" type="VBoxContainer" parent="."]
@@ -418,6 +419,23 @@ volume_db = -19.665
 
 [node name="player" parent="." instance=ExtResource("25_5f0ls")]
 visible = false
+
+[node name="AnimatedSprite2D" parent="player" index="0"]
+visible = false
+position = Vector2(293, 386.246)
+scale = Vector2(4.82292, 4.82682)
+frame = 3
+frame_progress = 0.192368
+
+[node name="CollisionShape2D" parent="player" index="1"]
+visible = false
+
+[node name="player_hitbox" parent="player" index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="player/player_hitbox" index="0"]
+visible = false
+position = Vector2(21, 22)
 
 [node name="world_cam" parent="player" index="3"]
 visible = false

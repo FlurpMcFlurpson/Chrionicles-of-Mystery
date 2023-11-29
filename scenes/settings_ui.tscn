@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://cky4yvncwolbt"]
+
+[ext_resource type="Script" path="res://scripts/UI/settings_ui.gd" id="1_g0rfx"]
+[ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="2_a16p4"]
+
+[node name="Settings" type="Panel"]
+script = ExtResource("1_g0rfx")
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -127.0
+offset_right = 85.5
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Settings_header" type="Label" parent="Container"]
+custom_minimum_size = Vector2(112, 39)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_a16p4")
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+
+[node name="Quit_button" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/icon_pressed_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/icon_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/icon_focus_color = Color(0.254902, 0.254902, 0.254902, 1)
+theme_override_fonts/font = ExtResource("2_a16p4")
+theme_override_font_sizes/font_size = 36
+text = "Quit to Main Menu"
+
+[connection signal="pressed" from="Container/Quit_button" to="." method="_on_quit_button_pressed"]

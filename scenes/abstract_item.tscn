@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://xbaga3i7d3xy"]
+[gd_scene load_steps=2 format=3 uid="uid://b05t4q6bhybix"]
 
-[ext_resource type="Script" path="res://scripts/AbstractItem.gd" id="1_g54sc"]
+[sub_resource type="GDScript" id="GDScript_ljywd"]
+script/source = "extends Sprite2D
+
+func _ready():
+	set_property()
+
+func set_property(ID = \"0\"):
+	var texture =load(\"res://art//items/\"+ ItemData.get_texture_name(ID))
+"
 
 [node name="AbstractItem" type="Sprite2D"]
-script = ExtResource("1_g54sc")
+script = SubResource("GDScript_ljywd")

@@ -8,6 +8,8 @@ var current_enemy_health = 0
 var block_active = false
 var experice_gained = randf_range(50,200)
 signal item_drop
+var skeleton = preload("res://enemyRes/Skeleton.tres")
+var slime = preload("res://enemyRes/Slime.tres")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -118,8 +120,6 @@ func check_end_combat():
 		$AnimationPlayer.play("enemy_death")
 		display_text("%s has been defeated" % enemy.name)
 		await(textbox_closed)
-		PlayerState.experience_points = PlayerState.experience_points + experice_gained
-		display_text("%s has gain %d experience points!" % [PlayerState.player_name , experice_gained])
 		display_text("%s has droped an item!" % enemy.name)
 		await (textbox_closed)
 		await get_tree().create_timer(0.25).timeout

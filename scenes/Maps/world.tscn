@@ -59,9 +59,9 @@ scale = Vector2(10.3725, 0.121095)
 position = Vector2(0, 66.0638)
 shape = SubResource("RectangleShape2D_hlgyd")
 
-[node name="EnemySpwan" parent="." instance=ExtResource("4_t0k37")]
-
 [node name="player" parent="." instance=ExtResource("4_ttps7")]
+
+[node name="EnemySpwan" parent="." instance=ExtResource("4_t0k37")]
 
 [connection signal="body_entered" from="Coast_portal" to="." method="_on_coast_portal_body_entered"]
 [connection signal="body_exited" from="Coast_portal" to="." method="_on_coast_portal_body_exited"]

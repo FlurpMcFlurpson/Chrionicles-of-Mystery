@@ -1,23 +1,124 @@
-[gd_scene load_steps=6 format=3 uid="uid://btvd2xn0dw5wh"]
+[gd_scene load_steps=19 format=3 uid="uid://btvd2xn0dw5wh"]
 
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_csbyn"]
-[ext_resource type="SpriteFrames" uid="uid://xn6p6sr8rpwf" path="res://art/characters/slime.tres" id="2_naoh1"]
+[ext_resource type="Texture2D" uid="uid://6uec43l613di" path="res://art/characters/skeleton.png" id="2_gpsv0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaelp"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o1de"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlsdy"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3hn3"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxba3"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoio8"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip6x4"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6le5k"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bhuf"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x85yi"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywu7o"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e7du"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_okucg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaelp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o1de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlsdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3hn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxba3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoio8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip6x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6le5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bhuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x85yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywu7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e7du")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd8nl"]
-radius = 32.0156
+radius = 53.0377
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bb46b"]
-radius = 7.0
+radius = 6.40312
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ihqrb"]
 radius = 8.0
 
 [node name="Enemy" type="CharacterBody2D"]
+safe_margin = 1.0
 script = ExtResource("1_csbyn")
+enemy_name = "Skeleton"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_naoh1")
-animation = &"walk"
+position = Vector2(0, -7)
+scale = Vector2(0.703125, 0.608984)
+sprite_frames = SubResource("SpriteFrames_okucg")
+animation = &"idle"
 offset = Vector2(0, -6.025)
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -25,6 +126,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_hd8nl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -34,7 +136,7 @@ shape = SubResource("CircleShape2D_bb46b")
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(0, -3)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_ihqrb")
 
 [node name="damage_cooldown" type="Timer" parent="."]

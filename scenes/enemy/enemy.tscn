@@ -7,13 +7,15 @@
 radius = 47.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bb46b"]
-radius = 10.198
+radius = 6.08276
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ihqrb"]
 radius = 12.0
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_16edn")
+enemy_name = "Slime"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_r3naf")
