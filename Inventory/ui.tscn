@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdwxu8ott1xgx"]
+[gd_scene load_steps=4 format=3 uid="uid://cdwxu8ott1xgx"]
 
 [ext_resource type="Script" path="res://scripts/UI/inv_ui.gd" id="1_gb0i6"]
 [ext_resource type="PackedScene" uid="uid://cky4yvncwolbt" path="res://scenes/settings_ui.tscn" id="2_ugtoe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w46so"]
+bg_color = Color(0, 0, 0, 0.756863)
 
 [node name="UI" type="Control"]
 custom_minimum_size = Vector2(1003, 502)
@@ -19,6 +22,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_gb0i6")
 
-[node name="Settings" parent="." instance=ExtResource("2_ugtoe")]
-visible = false
-layout_mode = 2
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Settings" parent="Panel" instance=ExtResource("2_ugtoe")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w46so")

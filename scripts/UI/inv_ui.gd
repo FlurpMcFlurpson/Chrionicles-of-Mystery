@@ -4,6 +4,7 @@ var is_open = false
 
 func _ready():
 	close()
+	
 func  _process(delta):
 	if Input.is_action_just_pressed("Open_menu"):
 		if is_open:

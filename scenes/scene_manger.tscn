@@ -81,7 +81,6 @@ libraries = {
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Menu_ui" parent="UI" instance=ExtResource("5_gy53b")]
-visible = false
 
 [node name="Inv_interface" parent="UI" instance=ExtResource("4_rcbop")]
 visible = false

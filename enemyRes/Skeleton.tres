@@ -1,10 +1,41 @@
-[gd_resource type="Resource" script_class="Base_Enemy" load_steps=2 format=3 uid="uid://t80pg3j03r8h"]
+[gd_resource type="Resource" script_class="Base_Enemy" load_steps=12 format=3 uid="uid://t80pg3j03r8h"]
 
 [ext_resource type="Script" path="res://scripts/enemy/base_enemy.gd" id="1_66451"]
+[ext_resource type="Resource" uid="uid://bu2xjkuy076ge" path="res://Items/Repo/Greater_Healing_Potion.tres" id="1_yyl36"]
+[ext_resource type="Script" path="res://Inventory/slot_data.gd" id="2_2dy53"]
+[ext_resource type="Texture2D" uid="uid://d2ix7oaycdpm3" path="res://art/characters/skeleton/skeleton00.png" id="4_wvq4h"]
+[ext_resource type="Texture2D" uid="uid://djjk8y5w2crsd" path="res://art/characters/skeleton/skeleton01.png" id="5_0yct2"]
+[ext_resource type="Texture2D" uid="uid://b7fa73kc6oh1n" path="res://art/characters/skeleton/skeleton02.png" id="6_6fntd"]
+[ext_resource type="Texture2D" uid="uid://ds2micr2moovp" path="res://art/characters/skeleton/skeleton03.png" id="7_k0p2p"]
+[ext_resource type="Texture2D" uid="uid://cwtlyn2e7uuf2" path="res://art/characters/skeleton/skeleton04.png" id="8_y4yld"]
+[ext_resource type="Texture2D" uid="uid://cedtdth1vh30s" path="res://art/characters/skeleton/skeleton05.png" id="9_3n7ei"]
+
+[sub_resource type="Resource" id="Resource_jms48"]
+script = ExtResource("2_2dy53")
+item_data = ExtResource("1_yyl36")
+quantity = 1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ofsm2"]
+frames = 6
+speed_scale = 5.0
+frame_0/texture = ExtResource("4_wvq4h")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("5_0yct2")
+frame_1/duration = 0.5
+frame_2/texture = ExtResource("6_6fntd")
+frame_2/duration = 0.5
+frame_3/texture = ExtResource("7_k0p2p")
+frame_3/duration = 0.5
+frame_4/texture = ExtResource("8_y4yld")
+frame_4/duration = 0.5
+frame_5/texture = ExtResource("9_3n7ei")
+frame_5/duration = 0.5
 
 [resource]
 script = ExtResource("1_66451")
-name = "Enemy"
+name = "A skeleton"
+texture = SubResource("AnimatedTexture_ofsm2")
 health = 40
 damage = 10
 speed = 15
+heldItem = SubResource("Resource_jms48")

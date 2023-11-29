@@ -11,7 +11,6 @@ signal item_drop
 var skeleton = preload("res://enemyRes/Skeleton.tres")
 var slime = preload("res://enemyRes/Slime.tres")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_health($EnemyContainer/ProgressBar, enemy.health, enemy.health)
@@ -23,6 +22,16 @@ func _ready():
 	current_enemy_health = enemy.health
 	current_player_health = PlayerState.current_health
 
+
+func set_enemy(enemy_name):
+	print(enemy_name)
+	match enemy_name:
+		"Slime":
+			print("Skeleton set")
+			enemy = slime
+		"Skeleton":
+			print("Skeleton set")
+			enemy = skeleton
 
 func  update_health():
 	print("heath updated")

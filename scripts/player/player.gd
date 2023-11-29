@@ -91,7 +91,7 @@ func  current_cam():
 		"coast":
 			print("coastcam on")
 			$world_cam.enabled = false
-			$coast_cam.enabled = false
+			$coast_cam.enabled = true
 		"combat":
 			$world_cam.enabled = false
 			$coast_cam.enabled = false
