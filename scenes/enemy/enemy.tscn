@@ -4,13 +4,13 @@
 [ext_resource type="SpriteFrames" uid="uid://xn6p6sr8rpwf" path="res://art/characters/slime.tres" id="2_r3naf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd8nl"]
-radius = 47.0
+radius = 35.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bb46b"]
 radius = 9.48683
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ihqrb"]
-radius = 17.0294
+radius = 12.0416
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 3

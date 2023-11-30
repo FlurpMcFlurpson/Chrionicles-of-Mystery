@@ -152,7 +152,6 @@ radius = 8.0
 [node name="Enemy" type="CharacterBody2D"]
 safe_margin = 1.0
 script = ExtResource("1_csbyn")
-enemy_name = "Skeleton"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)

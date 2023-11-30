@@ -66,7 +66,7 @@ func _on_run_pressed():
 	global.scene_entered = global.last_scene_used
 	emit_signal("world_changed", world_name)
 	global.transition_scene = false
-	global.just_in_combat = false
+	global.just_in_combat = true
 
 	
 

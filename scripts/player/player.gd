@@ -16,7 +16,7 @@ func _physics_process(delta):
 		player_movement(delta)
 	else :
 		play_anim(0)
-	current_cam()
+
 
 
 func player_movement(delta):
@@ -84,28 +84,15 @@ func _on_player_hitbox_body_exited(body):
 		enemy_Inragne = false
 
 
-func  current_cam():
-	
-	match global.current_scene:
-		
-		"world":
-			$world_cam.enabled = true
-			$coast_cam.enabled = false
-		"coast":
-			print("coastcam on")
-			$world_cam.enabled = false
-			$coast_cam.enabled = true
-		"combat":
-			$world_cam.enabled = false
-			$coast_cam.enabled = false
+
 
 
 func heal(healthRestored: int):
 	if PlayerState.current_health <= PlayerState.max_health:
 		PlayerState.current_health += healthRestored
-		get_tree().call_group("combat","update_health")
+		get_tree().call_group("combat","update_player_health")
 		if  PlayerState.current_health > PlayerState.max_health:
 			PlayerState.current_health = PlayerState.max_health
-			get_tree().call_group("combat","update_health")
+			get_tree().call_group("combat","update_player_health")
 	else:
 		return

@@ -4,6 +4,7 @@ var player_follow = false
 var player = null
 var player_in_Zone = false
 @export var enemy_type: Base_Enemy
+var testing = false
 
 
 func _ready():
@@ -26,11 +27,10 @@ func _physics_process(delta):
 
 
 func _on_detection_area_body_entered(body):
-	player = body
-	player_follow = true
+	if body.has_method("player"):
+		player = body
+		player_follow = true
 
-
-@warning_ignore("unused_parameter")
 func _on_detection_area_body_exited(body):
 	player = null
 	player_follow = false
@@ -56,3 +56,6 @@ func _on_enemy_hitbox_body_exited(body):
 
 
 		
+
+
+

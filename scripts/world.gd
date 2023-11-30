@@ -5,6 +5,7 @@ var player_last_posx=0
 var player_last_posy=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global.transition_scene = false
 	handle_player_spwaning_pos(world_name)
 	if global.game_init_load == true:
 		$player.position = global.player_init_pos
@@ -16,6 +17,8 @@ func _process(delta):
 		global.transition_scene = false
 	PlayerState.player_curent_posx = $player.position.x
 	PlayerState.player_curent_posy = $player.position.y
+	if PlayerState.moveable == false:
+		PlayerState.moveable = true
 	#print(global.last_scene_used)
 func _on_coast_portal_body_entered(body):
 	if body.has_method("player"):
