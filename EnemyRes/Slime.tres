@@ -2,8 +2,8 @@
 
 [ext_resource type="Resource" uid="uid://cmf6a5wyxk82t" path="res://Items/Repo/Healing_potion.tres" id="1_ii2kg"]
 [ext_resource type="Script" path="res://scripts/enemy/base_enemy.gd" id="1_ws5lo"]
-[ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="2_d3wb1"]
 [ext_resource type="Script" path="res://Inventory/slot_data.gd" id="2_qytsv"]
+[ext_resource type="SpriteFrames" uid="uid://xn6p6sr8rpwf" path="res://art/characters/slime.tres" id="4_6m2a4"]
 
 [sub_resource type="Resource" id="Resource_audo6"]
 script = ExtResource("2_qytsv")
@@ -12,8 +12,8 @@ quantity = 1
 
 [resource]
 script = ExtResource("1_ws5lo")
-name = " A slime"
-texture = ExtResource("2_d3wb1")
+name = "Slime"
+texture = ExtResource("4_6m2a4")
 health = 20
 damage = 8
 speed = 25

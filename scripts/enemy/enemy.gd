@@ -1,10 +1,14 @@
 extends CharacterBody2D
-@export var enemy_name: String
 var speed = 80
 var player_follow = false
 var player = null
 var player_in_Zone = false
+@export var enemy_type: Base_Enemy
 
+
+func _ready():
+	$AnimatedSprite2D.sprite_frames = enemy_type.texture
+	
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
 	
@@ -39,9 +43,9 @@ func enemy():
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("player") and global.just_in_combat ==! true:
 		player_in_Zone = true
-		get_tree().call_group("combat","set_enemy()")
+		global.enemy_res = enemy_type
 		global.transition_scene = true
-		global.scene_entered = "combat"
+		global.scene_entered = "combat_new"
 		global.just_in_combat = true
 
 

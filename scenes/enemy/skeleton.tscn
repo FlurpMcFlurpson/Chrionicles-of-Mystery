@@ -1,7 +1,27 @@
-[gd_scene load_steps=19 format=3 uid="uid://btvd2xn0dw5wh"]
+[gd_scene load_steps=24 format=3 uid="uid://btvd2xn0dw5wh"]
 
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_csbyn"]
 [ext_resource type="Texture2D" uid="uid://6uec43l613di" path="res://art/characters/skeleton.png" id="2_gpsv0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cburs"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxx02"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylpys"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0ax5"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7gvt"]
+atlas = ExtResource("2_gpsv0")
+region = Rect2(256, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaelp"]
 atlas = ExtResource("2_gpsv0")
@@ -53,6 +73,26 @@ region = Rect2(320, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okucg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cburs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxx02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylpys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0ax5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7gvt")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aaelp")
@@ -118,7 +158,7 @@ enemy_name = "Skeleton"
 position = Vector2(0, -7)
 scale = Vector2(0.703125, 0.608984)
 sprite_frames = SubResource("SpriteFrames_okucg")
-animation = &"idle"
+animation = &"death"
 offset = Vector2(0, -6.025)
 
 [node name="detection_area" type="Area2D" parent="."]

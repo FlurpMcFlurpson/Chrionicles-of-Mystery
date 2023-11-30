@@ -8,7 +8,7 @@ var max_health = 25
 var base_damage = 10
 var base_speed = 100
 var player_name = "Player"
-
+var moveable = true
 func use_slot_data(slot_data: SlotData):
 	slot_data.item_data.use(player)
 

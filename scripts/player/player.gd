@@ -12,7 +12,10 @@ func _ready():
 	PlayerState.player = self
 
 func _physics_process(delta):
-	player_movement(delta)
+	if PlayerState.moveable == true:
+		player_movement(delta)
+	else :
+		play_anim(0)
 	current_cam()
 
 

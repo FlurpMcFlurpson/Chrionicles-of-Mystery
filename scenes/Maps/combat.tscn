@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://cjd2gwr12xu68"]
 
 [ext_resource type="Script" path="res://scripts/combat.gd" id="1_gxtrx"]
-[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://EnemyRes/Slime.tres" id="2_adwyq"]
+[ext_resource type="Resource" uid="uid://cawcssv2ptlv3" path="res://enemyRes/Slime.tres" id="2_adwyq"]
 [ext_resource type="Texture2D" uid="uid://bx08cxphtmw8m" path="res://art/battleback10.png" id="3_gytai"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="4_fw2ga"]
 [ext_resource type="Texture2D" uid="uid://d1ytmvkefv3h3" path="res://slime.tres" id="5_6uf8k"]
@@ -205,7 +205,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gxtrx")
-world_name = "combat"
 enemy = ExtResource("2_adwyq")
 
 [node name="Background" type="TextureRect" parent="."]
