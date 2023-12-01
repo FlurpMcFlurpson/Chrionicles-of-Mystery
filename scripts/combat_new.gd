@@ -12,6 +12,7 @@ var current_enemy
 
 func _ready():
 	PlayerState.moveable = false
+	PlayerState.is_in_combat = true
 	current_player_health = PlayerState.current_health
 	await enemy_spawn()
 	current_enemy = $Enemy.enemy_type
@@ -68,8 +69,8 @@ func _on_items_pressed():
 
 
 func _on_run_pressed():
-	#display_text("Player got away safely!")
-	#await(textbox_closed)
+	display_text("Player got away safely!")
+	await(textbox_closed)
 	global.scene_entered = global.last_scene_used
 	global.transition_scene = true
 	emit_signal("world_changed", world_name)
@@ -85,7 +86,7 @@ func  update_player_health():
 
 func player_attack():
 	#check_end_combat()
-	player_ani.play("attack_side")
+	print(player_ani.is_playing())
 	display_text("You swing your sword at %s" % current_enemy.name)
 	await(textbox_closed)
 	$DamageSound.play()

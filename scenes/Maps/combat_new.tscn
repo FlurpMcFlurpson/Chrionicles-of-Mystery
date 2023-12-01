@@ -485,7 +485,8 @@ inv_data = ExtResource("4_4epoj")
 position = Vector2(0, 6)
 scale = Vector2(0.979167, 1)
 sprite_frames = SubResource("SpriteFrames_guxms")
-animation = &"attack_side"
+animation = &"idle_side"
+frame_progress = 0.396147
 offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]

@@ -4,7 +4,6 @@ var enemy_cooldown =true
 var alive = true
 var SPEED = PlayerState.base_speed
 var current_dir = "right"
-var attacking = false
 @export var inv_data: InventoryData
 
 
@@ -68,8 +67,7 @@ func  play_anim(movement):
 		if movement == 1:
 			anim.play("walk_up")
 	if movement == 0:
-		if attacking == false:
-			anim.play("idle_side")
+		anim.play("idle_side")
 
 func  player():
 	pass
@@ -96,3 +94,7 @@ func heal(healthRestored: int):
 			get_tree().call_group("combat","update_player_health")
 	else:
 		return
+
+
+func _on_button_pressed():
+	$AnimatedSprite2D.play("attack_side")

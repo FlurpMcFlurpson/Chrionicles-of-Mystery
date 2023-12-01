@@ -9,6 +9,8 @@ var base_damage = 10
 var base_speed = 100
 var player_name = "Player"
 var moveable = true
+var is_in_combat = false
 func use_slot_data(slot_data: SlotData):
 	slot_data.item_data.use(player)
+	
 

@@ -5,6 +5,7 @@ var player_last_posx=0
 var player_last_posy=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerState.is_in_combat = false
 	global.transition_scene = false
 	handle_player_spwaning_pos(world_name)
 	if global.game_init_load == true:
