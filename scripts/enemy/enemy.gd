@@ -1,7 +1,9 @@
+
 extends CharacterBody2D
 var speed = 80
 var player_follow = false
 var player = null
+var attacking = false
 var player_in_Zone = false
 @export var enemy_type: Base_Enemy
 var testing = false
@@ -9,6 +11,7 @@ var testing = false
 
 func _ready():
 	$AnimatedSprite2D.sprite_frames = enemy_type.texture
+	
 	
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
@@ -20,6 +23,8 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
+	if attacking:
+		$AnimatedSprite2D.play("attack")
 	else:
 		$AnimatedSprite2D.play("idle")
 	move_and_slide()
@@ -55,7 +60,6 @@ func _on_enemy_hitbox_body_exited(body):
 		global.transition_scene = false
 
 
-		
 
 
 

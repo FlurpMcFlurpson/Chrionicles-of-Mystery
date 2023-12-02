@@ -1,16 +1,22 @@
 extends Node2D
-signal world_changed(world_name)
+enum GameState {
+	Start,
+	Playerturn,
+	Enemyturn,
+	Win,
+}
 @export var world_name = ""
-var block_active = false
+signal world_changed(world_name)
 signal textbox_closed
+signal attacking()
 var enemy_load = preload("res://scenes/enemy/enemy.tscn")
+var block_active = false
 var current_player_health:int
 var current_enemy_health:int
 var current_enemy
-@onready var player_ani = $player/AnimatedSprite2D
-@onready var enemy_ani = $Enemy/AnimatedSprite2D
-
+@export var state: GameState
 func _ready():
+	state = GameState.Start
 	PlayerState.moveable = false
 	PlayerState.is_in_combat = true
 	current_player_health = PlayerState.current_health
@@ -18,7 +24,7 @@ func _ready():
 	current_enemy = $Enemy.enemy_type
 	current_enemy_health = current_enemy.health
 	$Enemy/AnimatedSprite2D.flip_h = true
-	$player/AnimatedSprite2D.flip_h = false
+	$player/AnimatedSprite2D.play("idle_side")
 	set_health($CanvasLayer/PlayerContainer/ProgressBar, PlayerState.current_health, PlayerState.max_health)
 	set_health($CanvasLayer/EnemyContainer/ProgressBar, current_enemy.health, current_enemy.health)
 	$CanvasLayer/Panel/Action_text.hide()
@@ -27,7 +33,6 @@ func _process(delta):
 	if PlayerState.moveable == true or $player/AnimatedSprite2D.flip_h == true:
 		PlayerState.moveable = false
 		$player/AnimatedSprite2D.flip_h = false
-	
 func  enemy_spawn():
 	var new_enemy = enemy_load.instantiate()
 	new_enemy.position.x = 767
@@ -85,11 +90,12 @@ func  update_player_health():
 
 
 func player_attack():
-	#check_end_combat()
-	print(player_ani.is_playing())
+	check_end_combat()
+	PlayerState.attacking = true
+	emit_signal("attacking")
+	$DamageSound.play()
 	display_text("You swing your sword at %s" % current_enemy.name)
 	await(textbox_closed)
-	$DamageSound.play()
 	current_enemy_health = max(0 ,  current_enemy_health - PlayerState.base_damage)
 	set_health($CanvasLayer/EnemyContainer/ProgressBar, current_enemy_health, current_enemy.health)
 	#$AnimationPlayer.play("ememy_damaged")
@@ -109,7 +115,6 @@ func check_end_combat():
 		await get_tree().create_timer(0.25).timeout
 		get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
 	if current_enemy_health == 0:
-		enemy_ani.play("death")
 		display_text("%s has been defeated" % current_enemy.name)
 		await(textbox_closed)
 		display_text("%s has droped an item!" % current_enemy.name)
@@ -140,3 +145,6 @@ func enemy_attack():
 		#$AnimationPlayer.play("player_damaged")
 		display_text("%s dealt %d damage!" % [current_enemy.name, current_enemy.damage])
 		await(textbox_closed)
+
+
+	

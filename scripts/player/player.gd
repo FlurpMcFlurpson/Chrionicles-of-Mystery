@@ -13,8 +13,6 @@ func _ready():
 func _physics_process(delta):
 	if PlayerState.moveable == true:
 		player_movement(delta)
-	else :
-		play_anim(0)
 
 
 
@@ -49,7 +47,6 @@ func player_movement(delta):
 func  play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
-	
 	if dir == "right":
 		anim.flip_h = false
 		if movement == 1:
@@ -68,6 +65,12 @@ func  play_anim(movement):
 			anim.play("walk_up")
 	if movement == 0:
 		anim.play("idle_side")
+	if movement == 3:
+		if PlayerState.attacking ==true:
+			anim.play("attack_side")
+		else:
+			anim.play("idle_side")
+		
 
 func  player():
 	pass
@@ -81,10 +84,6 @@ func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_Inragne = false
 
-
-
-
-
 func heal(healthRestored: int):
 	if PlayerState.current_health <= PlayerState.max_health:
 		PlayerState.current_health += healthRestored
@@ -95,6 +94,5 @@ func heal(healthRestored: int):
 	else:
 		return
 
-
-func _on_button_pressed():
-	$AnimatedSprite2D.play("attack_side")
+func _on_combat_new_attacking():
+	play_anim(3)
