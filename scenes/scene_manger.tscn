@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3f50vhsekn8b"]
+[gd_scene load_steps=12 format=3 uid="uid://b3f50vhsekn8b"]
 
 [ext_resource type="Script" path="res://scripts/scene_manger.gd" id="1_g701u"]
 [ext_resource type="PackedScene" uid="uid://bdlspnorq5pu4" path="res://scenes/Maps/world.tscn" id="2_v5vyh"]
 [ext_resource type="PackedScene" uid="uid://cscql4tfgceh3" path="res://Inventory/inv_interface.tscn" id="4_rcbop"]
 [ext_resource type="PackedScene" uid="uid://cdwxu8ott1xgx" path="res://Inventory/ui.tscn" id="5_gy53b"]
+[ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="5_ky33o"]
 
 [sub_resource type="Animation" id="Animation_ssp7x"]
 length = 0.001
@@ -59,6 +60,21 @@ _data = {
 "fade_out": SubResource("Animation_6r3cs")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2h3vt"]
+bg_color = Color(0.619608, 0.0784314, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8dce"]
+bg_color = Color(0.0431373, 0.360784, 0.0235294, 1)
+
 [node name="Scene_manger" type="Node"]
 script = ExtResource("1_g701u")
 
@@ -81,9 +97,43 @@ libraries = {
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Menu_ui" parent="UI" instance=ExtResource("5_gy53b")]
+visible = false
 
 [node name="Inv_interface" parent="UI" instance=ExtResource("4_rcbop")]
 visible = false
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+custom_minimum_size = Vector2(0, 23)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 386.0
+offset_top = -23.0
+offset_right = -310.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_2h3vt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m8dce")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_ky33o")
+theme_override_font_sizes/font_size = 25
+text = "Hp: 50/100
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

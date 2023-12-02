@@ -1,34 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl3emxh5terbm"]
+[gd_scene load_steps=7 format=3 uid="uid://cl3emxh5terbm"]
 
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_16edn"]
 [ext_resource type="SpriteFrames" uid="uid://xn6p6sr8rpwf" path="res://art/characters/slime.tres" id="2_r3naf"]
+[ext_resource type="Resource" uid="uid://t80pg3j03r8h" path="res://enemyRes/Skeleton.tres" id="2_w2r41"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd8nl"]
-radius = 35.0
+radius = 57.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bb46b"]
-radius = 9.48683
+radius = 7.2111
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ihqrb"]
-radius = 12.0416
+radius = 12.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_16edn")
+enemy_type = ExtResource("2_w2r41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -0.579285)
+scale = Vector2(1, 0.984766)
 sprite_frames = ExtResource("2_r3naf")
-animation = &"walk"
-offset = Vector2(0, -6.025)
+animation = &"attack"
+offset = Vector2(0, -2.025)
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+visible = false
 shape = SubResource("CircleShape2D_hd8nl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_bb46b")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]

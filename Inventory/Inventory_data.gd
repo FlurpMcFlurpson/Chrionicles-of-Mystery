@@ -65,6 +65,6 @@ func use_slot_data(index: int):
 		slot_data.quantity -= 1
 		if slot_data.quantity <= 0:
 			slot_datas[index] = null
-	print(slot_data.item_data.Item_name)
+	#(slot_data.item_data.Item_name)
 	PlayerState.use_slot_data(slot_data)
 	inv_updated.emit(self)

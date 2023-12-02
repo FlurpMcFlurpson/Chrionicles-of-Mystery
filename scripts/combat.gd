@@ -24,17 +24,17 @@ func _ready():
 
 
 func set_enemy(enemy_name):
-	print(enemy_name)
+	#(enemy_name)
 	match enemy_name:
 		"Slime":
-			print("Skeleton set")
+			#("Skeleton set")
 			enemy = slime
 		"Skeleton":
-			print("Skeleton set")
+			#("Skeleton set")
 			enemy = skeleton
 
 func  update_health():
-	print("heath updated")
+	#("heath updated")
 	if current_player_health != PlayerState.current_health:
 		current_player_health = PlayerState.current_health
 		set_health($PlayerContainer/ProgressBar, current_player_health, PlayerState.max_health)

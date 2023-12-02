@@ -4,6 +4,7 @@ var enemy_cooldown =true
 var alive = true
 var SPEED = PlayerState.base_speed
 var current_dir = "right"
+signal just_healed
 @export var inv_data: InventoryData
 
 
@@ -87,12 +88,13 @@ func _on_player_hitbox_body_exited(body):
 func heal(healthRestored: int):
 	if PlayerState.current_health <= PlayerState.max_health:
 		PlayerState.current_health += healthRestored
-		get_tree().call_group("combat","update_player_health")
+		emit_signal("just_healed")
 		if  PlayerState.current_health > PlayerState.max_health:
 			PlayerState.current_health = PlayerState.max_health
-			get_tree().call_group("combat","update_player_health")
+			emit_signal("just_healed")
 	else:
 		return
 
 func _on_combat_new_attacking():
 	play_anim(3)
+

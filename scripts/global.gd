@@ -1,7 +1,8 @@
 extends Node
 
 var player_attacking = false
-
+var enemy_spawn_area_posx:float
+var enemy_spawn_area_posy:float
 var current_scene = ""
 var last_scene_used =  ""
 var transition_scene = false
@@ -13,6 +14,6 @@ var game_init_load = false
 var current_world_name = ""
 var just_in_combat = false
 var enemy_res : Base_Enemy
-
+var damage_delt
 
 

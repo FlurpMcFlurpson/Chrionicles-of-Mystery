@@ -7,9 +7,22 @@ func _ready():
 
 
 func  enemy_spawn():
-	for i in range(1,2):
+	for i in randi_range(2,7):
 		var new_enemy = enemy_load.instantiate()
-		new_enemy.position.x = 270#PlayerState.player_curent_posx + randf_range(50,100)
-		new_enemy.position.y = 64#PlayerState.player_curent_posy + randf_range(50,100)
-		new_enemy.enemy_type = load("res://enemyRes/Slime.tres")
+		new_enemy.position.x = global.enemy_spawn_area_posx + randf_range(50,100)
+		new_enemy.position.y = global.enemy_spawn_area_posy + randf_range(50,100)
+		global.enemy_spawn_area_posx = new_enemy.position.x
+		global.enemy_spawn_area_posy = new_enemy.position.y 
+		print(new_enemy.position.x)
+		print(new_enemy.position.y)
+		new_enemy.enemy_type = random_enemy()
 		add_child(new_enemy)
+
+func random_enemy():
+	var random_enemy
+	var i = randi_range(0,9)
+	if i == 4 or i ==7 or i == 0:
+		random_enemy = load("res://enemyRes/Skeleton.tres")
+	else:
+		random_enemy = load("res://enemyRes/Slime.tres")
+	return random_enemy

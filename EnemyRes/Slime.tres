@@ -12,9 +12,13 @@ quantity = 1
 
 [resource]
 script = ExtResource("1_ws5lo")
+is_dead = false
+attacking = false
+enemy_y_offset = -2
 name = "Slime"
 texture = ExtResource("4_6m2a4")
 health = 20
 damage = 8
 speed = 25
 heldItem = SubResource("Resource_audo6")
+max_health = 20

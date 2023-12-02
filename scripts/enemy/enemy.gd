@@ -11,6 +11,7 @@ var testing = false
 
 func _ready():
 	$AnimatedSprite2D.sprite_frames = enemy_type.texture
+	$AnimatedSprite2D.offset.y = enemy_type.enemy_y_offset
 	
 	
 @warning_ignore("unused_parameter")
@@ -23,8 +24,8 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-	if attacking:
-		$AnimatedSprite2D.play("attack")
+	elif enemy_type.attacking:
+		pass
 	else:
 		$AnimatedSprite2D.play("idle")
 	move_and_slide()

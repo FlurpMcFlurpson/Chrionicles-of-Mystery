@@ -485,8 +485,7 @@ inv_data = ExtResource("4_4epoj")
 position = Vector2(0, 6)
 scale = Vector2(0.979167, 1)
 sprite_frames = SubResource("SpriteFrames_guxms")
-animation = &"death"
-frame_progress = 0.718688
+animation = &"attack_side"
 offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
@@ -655,7 +654,6 @@ stream = ExtResource("8_3322x")
 volume_db = -19.665
 
 [connection signal="attacking" from="." to="player" method="_on_combat_new_attacking"]
-[connection signal="just_healed" from="player" to="." method="_on_player_just_healed"]
 [connection signal="body_entered" from="player/player_hitbox" to="player" method="_on_player_hitbox_body_entered" flags=18]
 [connection signal="body_exited" from="player/player_hitbox" to="player" method="_on_player_hitbox_body_exited" flags=18]
 [connection signal="pressed" from="CanvasLayer/Panel/ActionMenu/Attack" to="." method="_on_attack_pressed"]
