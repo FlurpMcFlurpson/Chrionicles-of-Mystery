@@ -35,6 +35,7 @@ func SetupCombat():
 	set_health($CanvasLayer/PlayerContainer/ProgressBar, PlayerState.current_health, PlayerState.max_health)
 	set_health($CanvasLayer/EnemyContainer/ProgressBar, current_enemy.health, current_enemy.max_health)
 	$CanvasLayer/Panel/Action_text.hide()
+	$BattleMusic.play()
 	
 	state = GameState.Playerturn
 	PlayerTurn()

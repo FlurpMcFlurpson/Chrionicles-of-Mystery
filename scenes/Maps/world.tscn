@@ -505,6 +505,9 @@ shape = SubResource("CircleShape2D_cc5no")
 
 [node name="EnemySpwan" parent="." instance=ExtResource("4_t0k37")]
 
+[node name="SpawnMaker" type="Marker2D" parent="."]
+position = Vector2(281, 169)
+
 [connection signal="body_entered" from="Coast_portal" to="." method="_on_coast_portal_body_entered"]
 [connection signal="body_exited" from="Coast_portal" to="." method="_on_coast_portal_body_exited"]
 [connection signal="body_entered" from="Forest_Protal" to="." method="_on_forest_protal_body_entered"]

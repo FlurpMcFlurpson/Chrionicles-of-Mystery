@@ -10,6 +10,7 @@ var testing = false
 
 
 func _ready():
+	
 	$AnimatedSprite2D.sprite_frames = enemy_type.texture
 	$AnimatedSprite2D.offset.y = enemy_type.enemy_y_offset
 	
@@ -59,6 +60,7 @@ func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_in_Zone = false
 		global.transition_scene = false
+
 
 
 
