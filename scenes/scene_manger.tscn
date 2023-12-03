@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b3f50vhsekn8b"]
 
 [ext_resource type="Script" path="res://scripts/scene_manger.gd" id="1_g701u"]
-[ext_resource type="PackedScene" uid="uid://bdlspnorq5pu4" path="res://scenes/Maps/world.tscn" id="2_v5vyh"]
+[ext_resource type="PackedScene" uid="uid://bvfbf37a12asl" path="res://scenes/Maps/coast.tscn" id="2_4knmk"]
 [ext_resource type="PackedScene" uid="uid://cscql4tfgceh3" path="res://Inventory/inv_interface.tscn" id="4_rcbop"]
 [ext_resource type="PackedScene" uid="uid://cdwxu8ott1xgx" path="res://Inventory/ui.tscn" id="5_gy53b"]
 [ext_resource type="FontFile" uid="uid://chxubfkg3ng3l" path="res://art/fonts/Nes.tres" id="5_ky33o"]
@@ -78,7 +78,7 @@ bg_color = Color(0.0431373, 0.360784, 0.0235294, 1)
 [node name="Scene_manger" type="Node"]
 script = ExtResource("1_g701u")
 
-[node name="world" parent="." instance=ExtResource("2_v5vyh")]
+[node name="coast" parent="." instance=ExtResource("2_4knmk")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 2
@@ -141,6 +141,6 @@ vertical_alignment = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
-[editable path="world"]
+[editable path="coast"]
 [editable path="UI/Inv_interface"]
 [editable path="UI/Inv_interface/Inventory"]

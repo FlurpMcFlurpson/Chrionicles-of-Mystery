@@ -4,9 +4,9 @@ var next_world
 var next_world_name :String
 
 
-@onready var player: CharacterBody2D = $world/player
+@onready var player: CharacterBody2D = $coast/player
 @onready var inv_interface = $UI/Inv_interface
-@onready var current_world = $world
+@onready var current_world = $coast
 @onready var anim = $AnimationPlayer
 @onready var Menu = $UI/Menu_ui
 
