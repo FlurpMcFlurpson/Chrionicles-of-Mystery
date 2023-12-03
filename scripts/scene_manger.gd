@@ -50,8 +50,6 @@ func handle_world_chagned(current_world_name:String):
 	next_world.connect("world_changed",self.handle_world_chagned)
 	
 	
-
-
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"fade_in":
