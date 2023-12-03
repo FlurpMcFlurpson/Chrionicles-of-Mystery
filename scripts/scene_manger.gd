@@ -38,13 +38,13 @@ func toggle_menu_interface():
 	Menu.visible = not Menu.visible
 
 func handle_world_chagned(current_world_name:String):
-	#("singal Sent!!!!!!")
-	#(current_world_name +" is the scene being exited")
+	print("singal Sent!!!!!!")
+	print(current_world_name +" is the scene being exited")
 	next_world_name = global.scene_entered
-	#(next_world_name+" has be created")
+	print(next_world_name+" has be created")
 	next_world = load("res://scenes/Maps/"+next_world_name+".tscn").instantiate()
 	next_world.z_index = -1
-	#(next_world.name+ " :is the newly loaded scene")
+	print(next_world.name+ " :is the newly loaded scene")
 	add_child(next_world)
 	anim.play("fade_in")
 	next_world.connect("world_changed",self.handle_world_chagned)
@@ -56,9 +56,9 @@ func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"fade_in":
 			global.last_scene_used = current_world.name
-			#(current_world.name+" is delelted")
+			print(current_world.name+" is delelted")
 			current_world.queue_free()
-			#("//////////////////////////////////")
+			print("//////////////////////////////////")
 			global.current_scene = next_world.name
 			current_world = next_world
 			current_world.z_index = 0

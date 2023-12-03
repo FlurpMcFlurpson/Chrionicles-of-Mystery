@@ -81,10 +81,14 @@ script = ExtResource("1_g701u")
 [node name="world" parent="." instance=ExtResource("2_v5vyh")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-z_index = 1
+z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -565.0
+offset_top = -153.0
+offset_right = 653.0
+offset_bottom = 461.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)

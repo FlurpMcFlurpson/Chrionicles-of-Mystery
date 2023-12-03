@@ -7,14 +7,13 @@ func _ready():
 
 
 func  enemy_spawn():
-	for i in randi_range(2,7):
+	for i in randi_range(2,4):
 		var new_enemy = enemy_load.instantiate()
 		new_enemy.position.x = global.enemy_spawn_area_posx + randf_range(50,100)
 		new_enemy.position.y = global.enemy_spawn_area_posy + randf_range(50,100)
 		global.enemy_spawn_area_posx = new_enemy.position.x
 		global.enemy_spawn_area_posy = new_enemy.position.y 
-		print(new_enemy.position.x)
-		print(new_enemy.position.y)
+	
 		new_enemy.enemy_type = random_enemy()
 		add_child(new_enemy)
 

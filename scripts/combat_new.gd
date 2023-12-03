@@ -91,7 +91,6 @@ func player_attack():
 	PlayerState.attacking = true
 	var isDead:bool
 	var miss_chance = randi_range(0,9)
-	print(miss_chance)
 	if miss_chance == 9 or miss_chance == 2 or miss_chance == 5:
 		display_text("%s's attack misses!" % PlayerState.player_name)
 		isDead=false

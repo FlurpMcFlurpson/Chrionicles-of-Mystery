@@ -15,9 +15,6 @@ func _ready():
 		global.enemy_spawn_area_posx = global.player_init_pos.x
 		global.enemy_spawn_area_posy = global.player_init_pos.y
 		global.game_init_load = false
-	if global.game_init_load == false:
-		global.enemy_spawn_area_posx = $player.position.x
-		global.enemy_spawn_area_posy = $player.position.y
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if global.transition_scene == true:
@@ -45,7 +42,7 @@ func _on_world_portal_body_exited(body):
 func _on_forest_protal_body_entered(body):
 	if body.has_method("player"):
 		global.scene_entered = "forest"
-		global.transition_scene = false
+		global.transition_scene = true
 func _on_forest_protal_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false
@@ -55,11 +52,13 @@ func handle_player_spwaning_pos(world_name):
 			$player.position = global.player_coast_pos
 			global.enemy_spawn_area_posx = $player.position.x
 			global.enemy_spawn_area_posy = $player.position.y
+			if global.just_in_combat == true:
+				$player.position = Vector2(PlayerState.player_curent_posx,PlayerState.player_curent_posy)
 		"world":
 			global.enemy_spawn_area_posx = $player.position.x
 			global.enemy_spawn_area_posy = $player.position.y
 			if global.game_init_load == false:
-				$player.position = global.player_exits_coast
+				$player.position = global.player_exits_forest
 			if global.just_in_combat == true:
 				$player.position = Vector2(PlayerState.player_curent_posx,PlayerState.player_curent_posy)
  
