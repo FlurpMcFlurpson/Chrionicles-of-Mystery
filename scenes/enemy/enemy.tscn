@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_16edn"]
 [ext_resource type="SpriteFrames" uid="uid://xn6p6sr8rpwf" path="res://art/characters/slime.tres" id="2_r3naf"]
-[ext_resource type="Resource" uid="uid://t80pg3j03r8h" path="res://enemyRes/Skeleton.tres" id="2_w2r41"]
+[ext_resource type="Resource" uid="uid://t80pg3j03r8h" path="res://EnemyRes/Skeleton.tres" id="2_w2r41"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd8nl"]
 radius = 57.0

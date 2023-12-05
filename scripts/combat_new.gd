@@ -125,8 +125,6 @@ func EndCombat():
 		display_text("%s has been defeated" % current_enemy.name)
 		await(textbox_closed)
 		#current_enemy.is_dead = false
-		display_text("%s has droped an item!" % current_enemy.name)
-		await (textbox_closed)
 		await get_tree().create_timer(0.25).timeout
 		global.transition_scene = true
 		global.scene_entered = global.last_scene_used

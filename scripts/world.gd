@@ -49,16 +49,18 @@ func _on_forest_protal_body_exited(body):
 func handle_player_spwaning_pos(world_name):
 	match world_name:
 		"coast":
+			global.left_coast = true
 			$player.position = global.player_coast_pos
-			global.enemy_spawn_area_posx = $player.position.x
-			global.enemy_spawn_area_posy = $player.position.y
+			global.enemy_spawn_area_posx = $EnemySpwan.position.x
+			global.enemy_spawn_area_posy = $EnemySpwan.position.y
 			if global.just_in_combat == true:
 				$player.position = Vector2(PlayerState.player_curent_posx,PlayerState.player_curent_posy)
 		"world":
-			global.enemy_spawn_area_posx = $player.position.x
-			global.enemy_spawn_area_posy = $player.position.y
-			if global.game_init_load == false:
+			global.enemy_spawn_area_posx = $EnemySpwan.position.x
+			global.enemy_spawn_area_posy = $EnemySpwan.position.y
+			if global.left_coast == true:
 				$player.position = global.player_exits_coast
+				global.left_coast = false
 			if global.just_in_combat == true:
 				$player.position = Vector2(PlayerState.player_curent_posx,PlayerState.player_curent_posy)
  

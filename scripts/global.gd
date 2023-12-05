@@ -16,5 +16,5 @@ var current_world_name = ""
 var just_in_combat = false
 var enemy_res : Base_Enemy
 var damage_delt
-
+var left_coast = true
 
